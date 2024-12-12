@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\GUI.exe.config
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\GUI.exe
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\GUI.pdb
@@ -35,3 +36,17 @@ D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.exe.licenses
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.NhanVienForm.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.SplashScreen1.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.WaitForm1.resources
+=======
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.Login.resources
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\GUI.exe.config
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\GUI.exe
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\GUI.pdb
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.exe
+D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.pdb
+>>>>>>> 5039f26d111f28da987947c056aa03ad77a29bf8
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.Login.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdmin.resources
