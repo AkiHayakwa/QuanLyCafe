@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,26 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class GiaoDienAdmin : DevExpress.XtraEditors.XtraUserControl
+    public partial class GiaoDienAdmin : UserControl
     {
         public GiaoDienAdmin()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

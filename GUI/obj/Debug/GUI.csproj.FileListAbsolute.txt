@@ -50,3 +50,7 @@ D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.pdb
 >>>>>>> 5039f26d111f28da987947c056aa03ad77a29bf8
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.Login.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdmin.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.Form1.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdminDashboard.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdminThemNguoiDung.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienDangki.resources
