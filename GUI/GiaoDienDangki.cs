@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DTO;
+using BUS;
+
 namespace GUI
 {
     public partial class GiaoDienDangki : Form
@@ -51,7 +54,35 @@ namespace GUI
                 MessageBox.Show("Tài khoản , mật khẩu và xác nhận mật khẩu không được để trống ", "Thông Báo !", MessageBoxButtons.OK , MessageBoxIcon.Error);
             }
 
-            string Username = "SELECT * FROM users WHERE username = @userName";
+            if (Register_password.Text != Register_confirmpassword.Text)
+            {
+                MessageBox.Show("Mật khẩu xác nhận không khớp!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            TaiKhoanDTO newTaiKhoan = new TaiKhoanDTO
+            {
+                TenNguoiDung = Register_username.Text,
+                MatKhau = Register_password.Text,
+                TrangThai = "Active",
+                Quyen = "User",          
+            };
+
+            TaiKhoanBus bus = new TaiKhoanBus();
+            bool isRegistered = bus.AddTaiKhoan(newTaiKhoan);
+
+            if (isRegistered)
+            {
+                MessageBox.Show("Đăng ký tài khoản thành công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Điều hướng về Form đăng nhập
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Đăng ký tài khoản thất bại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
