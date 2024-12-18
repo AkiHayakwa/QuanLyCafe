@@ -84,5 +84,10 @@ namespace GUI
                 MessageBox.Show("Đăng ký tài khoản thất bại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void GiaoDienDangki_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

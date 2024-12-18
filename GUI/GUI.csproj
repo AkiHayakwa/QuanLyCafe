@@ -228,6 +228,12 @@
     <Compile Include="GiaoDienDangki.Designer.cs">
       <DependentUpon>GiaoDienDangki.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDienThuNgan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDienThuNgan.Designer.cs">
+      <DependentUpon>GiaoDienThuNgan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDienThuNganDatMon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDienDangki.resx">
       <DependentUpon>GiaoDienDangki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienThuNgan.resx">
+      <DependentUpon>GiaoDienThuNgan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDienThuNganDatMon.resx">
       <DependentUpon>GiaoDienThuNganDatMon.cs</DependentUpon>
