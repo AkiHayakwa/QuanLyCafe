@@ -28,59 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_UserAccount = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AdminAddUser_username = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.AdminAddUser_password = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnClearUser = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.AdminAddUser_Status = new System.Windows.Forms.ComboBox();
+            this.AdminAddUser_Role = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserAccount)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgv_UserAccount);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(470, 56);
+            this.panel2.Location = new System.Drawing.Point(436, 29);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(730, 608);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // dataGridView1
+            // dgv_UserAccount
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 63);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(696, 532);
-            this.dataGridView1.TabIndex = 1;
+            this.dgv_UserAccount.AllowUserToAddRows = false;
+            this.dgv_UserAccount.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_UserAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_UserAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_UserAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_UserAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_UserAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_UserAccount.EnableHeadersVisualStyles = false;
+            this.dgv_UserAccount.Location = new System.Drawing.Point(20, 56);
+            this.dgv_UserAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_UserAccount.Name = "dgv_UserAccount";
+            this.dgv_UserAccount.ReadOnly = true;
+            this.dgv_UserAccount.RowHeadersVisible = false;
+            this.dgv_UserAccount.RowHeadersWidth = 51;
+            this.dgv_UserAccount.RowTemplate.Height = 24;
+            this.dgv_UserAccount.Size = new System.Drawing.Size(696, 532);
+            this.dgv_UserAccount.TabIndex = 1;
+            this.dgv_UserAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_UserAccount_CellClick);
+            this.dgv_UserAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_UserAccount_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 20);
+            this.label1.Location = new System.Drawing.Point(15, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 25);
@@ -98,13 +117,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên người dùng :";
             // 
-            // textBox1
+            // AdminAddUser_username
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 78);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 2;
+            this.AdminAddUser_username.Location = new System.Drawing.Point(152, 78);
+            this.AdminAddUser_username.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminAddUser_username.Name = "AdminAddUser_username";
+            this.AdminAddUser_username.Size = new System.Drawing.Size(190, 20);
+            this.AdminAddUser_username.TabIndex = 2;
             // 
             // label3
             // 
@@ -117,13 +136,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Mật khẩu :";
             // 
-            // textBox2
+            // AdminAddUser_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 144);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 20);
-            this.textBox2.TabIndex = 4;
+            this.AdminAddUser_password.Location = new System.Drawing.Point(152, 144);
+            this.AdminAddUser_password.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminAddUser_password.Name = "AdminAddUser_password";
+            this.AdminAddUser_password.Size = new System.Drawing.Size(190, 20);
+            this.AdminAddUser_password.TabIndex = 4;
+            this.AdminAddUser_password.TextChanged += new System.EventHandler(this.Admin_TextChanged);
             // 
             // label4
             // 
@@ -140,19 +160,19 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.btnClearUser);
+            this.panel1.Controls.Add(this.btnDeleteUser);
+            this.panel1.Controls.Add(this.btnUpdateUser);
+            this.panel1.Controls.Add(this.btnAddUser);
+            this.panel1.Controls.Add(this.AdminAddUser_Status);
+            this.panel1.Controls.Add(this.AdminAddUser_Role);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.AdminAddUser_password);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.AdminAddUser_username);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(53, 56);
+            this.panel1.Location = new System.Drawing.Point(35, 29);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 608);
@@ -162,88 +182,90 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(117, 20);
+            this.label6.Location = new System.Drawing.Point(102, 20);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 25);
             this.label6.TabIndex = 14;
             this.label6.Text = "Bảng nhập liệu";
             // 
-            // button4
+            // btnClearUser
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkCyan;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(210, 479);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 56);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Xóa bỏ";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnClearUser.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnClearUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearUser.ForeColor = System.Drawing.Color.White;
+            this.btnClearUser.Location = new System.Drawing.Point(201, 449);
+            this.btnClearUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearUser.Name = "btnClearUser";
+            this.btnClearUser.Size = new System.Drawing.Size(116, 56);
+            this.btnClearUser.TabIndex = 13;
+            this.btnClearUser.Text = "Xóa bỏ";
+            this.btnClearUser.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnDeleteUser
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkCyan;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(20, 479);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 56);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDeleteUser.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnDeleteUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteUser.Location = new System.Drawing.Point(48, 449);
+            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(116, 56);
+            this.btnDeleteUser.TabIndex = 12;
+            this.btnDeleteUser.Text = "Xóa";
+            this.btnDeleteUser.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnUpdateUser
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkCyan;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(210, 353);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 54);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Cập nhật";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUpdateUser.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnUpdateUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateUser.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateUser.Location = new System.Drawing.Point(201, 353);
+            this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(116, 54);
+            this.btnUpdateUser.TabIndex = 11;
+            this.btnUpdateUser.Text = "Cập nhật";
+            this.btnUpdateUser.UseVisualStyleBackColor = false;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
-            // button1
+            // btnAddUser
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(22, 353);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 54);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddUser.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.ForeColor = System.Drawing.Color.White;
+            this.btnAddUser.Location = new System.Drawing.Point(48, 353);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(116, 54);
+            this.btnAddUser.TabIndex = 10;
+            this.btnAddUser.Text = "Thêm";
+            this.btnAddUser.UseVisualStyleBackColor = false;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // comboBox2
+            // AdminAddUser_Status
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.AdminAddUser_Status.FormattingEnabled = true;
+            this.AdminAddUser_Status.Items.AddRange(new object[] {
             "Hoạt động",
             "Không hoạt động "});
-            this.comboBox2.Location = new System.Drawing.Point(152, 278);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(190, 21);
-            this.comboBox2.TabIndex = 9;
+            this.AdminAddUser_Status.Location = new System.Drawing.Point(152, 278);
+            this.AdminAddUser_Status.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminAddUser_Status.Name = "AdminAddUser_Status";
+            this.AdminAddUser_Status.Size = new System.Drawing.Size(190, 21);
+            this.AdminAddUser_Status.TabIndex = 9;
             // 
-            // comboBox1
+            // AdminAddUser_Role
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.AdminAddUser_Role.FormattingEnabled = true;
+            this.AdminAddUser_Role.Items.AddRange(new object[] {
             "Admin\t",
             "Thu ngân"});
-            this.comboBox1.Location = new System.Drawing.Point(152, 213);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 21);
-            this.comboBox1.TabIndex = 8;
+            this.AdminAddUser_Role.Location = new System.Drawing.Point(152, 213);
+            this.AdminAddUser_Role.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminAddUser_Role.Name = "AdminAddUser_Role";
+            this.AdminAddUser_Role.Size = new System.Drawing.Size(190, 21);
+            this.AdminAddUser_Role.TabIndex = 8;
             // 
             // label5
             // 
@@ -256,83 +278,42 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Trạng thái :";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1251, 37);
-            this.panel3.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(535, 8);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(195, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "HỆ THỐNG QUẢN LÝ CAFE";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(1206, 9);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "X";
-            // 
             // GiaoDienAdminThemNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GiaoDienAdminThemNguoiDung";
             this.Size = new System.Drawing.Size(1251, 745);
+            this.Load += new System.EventHandler(this.GiaoDienAdminThemNguoiDung_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_UserAccount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_UserAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AdminAddUser_username;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox AdminAddUser_password;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnClearUser;
+        private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.Button btnUpdateUser;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.ComboBox AdminAddUser_Status;
+        private System.Windows.Forms.ComboBox AdminAddUser_Role;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
     }
 }

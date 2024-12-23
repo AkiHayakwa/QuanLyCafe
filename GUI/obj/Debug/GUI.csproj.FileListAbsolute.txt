@@ -136,7 +136,6 @@ D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DAO.pdb
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DAO.dll.config
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DTO.pdb
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DTO.dll.config
-<<<<<<< HEAD
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DevExpress.Charts.v24.1.Core.dll
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DevExpress.CodeParser.v24.1.dll
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DevExpress.DataAccess.v24.1.dll
@@ -193,7 +192,6 @@ D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DevExpress.XtraDiagram.v24.1.xml
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DevExpress.Diagram.v24.1.Core.xml
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThuNganDatMon.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThuNganNguoiDung.resources
-=======
 D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\Azure.Core.dll
 D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\Azure.Identity.dll
 D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\BUS.dll
@@ -312,3 +310,5 @@ D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\DevExpres
 D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\bin\Debug\DevExpress.Pdf.v24.2.Drawing.xml
 D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.AdminThemSP.resources
 >>>>>>> 3a94eb7ecfd9d80c709e78faf708b1f1c92a081b
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThuNgan.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdminThemSP.resources

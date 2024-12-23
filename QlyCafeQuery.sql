@@ -11,14 +11,14 @@ go
 -- Tạo bảng DanhMuc
 CREATE TABLE DanhMuc (
     id_DanhMuc INT PRIMARY KEY ,
-    TenDanhMuc NVARCHAR(100) NOT NULL
+		 NVARCHAR(100) NOT NULL
 );
 
 -- Tạo bảng SanPham
 CREATE TABLE SanPham (
     id_SanPham INT PRIMARY KEY ,
     TenSanPham NVARCHAR(100) NOT NULL,
-    gia DECIMAL(10, 2) NOT NULL,
+    giaMua DECIMAL(10, 2) NOT NULL,
     id_DanhMuc INT,
     FOREIGN KEY (id_DanhMuc) REFERENCES DanhMuc(id_DanhMuc)
 );
@@ -30,15 +30,18 @@ CREATE TABLE BanCafe (
     TrangThai NVARCHAR(50) NOT NULL
 );
 
+
 -- Tạo bảng HoaDon
 CREATE TABLE HoaDon (
     id_HoaDon INT PRIMARY KEY,
-    id_Ban INT,
-    id_NhanVien INT,
+    id_Ban INT not null,
+	id_KhachHang INT not null , 
+	Ngay Date ,
     TongTien DECIMAL(10, 2),
-    GiamGia DECIMAL(10, 2),
+    GiamGia DECIMAL(10, 2) not null default 0,
+
     FOREIGN KEY (id_Ban) REFERENCES BanCafe(id_Ban),
-    FOREIGN KEY (id_NhanVien) REFERENCES NhanVien(id_NhanVien)
+	FOREIGN KEY (id_KhachHang) REFERENCES KhachHang(id_KhachHang)
 );
 
 -- Tạo bảng ChiTietHoaDon
@@ -47,17 +50,11 @@ CREATE TABLE ChiTietHoaDon (
     id_HoaDon INT,
     id_SanPham INT,
     SoLuong INT NOT NULL,
+	GiaBan Float NOT NULL,
     FOREIGN KEY (id_HoaDon) REFERENCES HoaDon(id_HoaDon),
     FOREIGN KEY (id_SanPham) REFERENCES SanPham(id_SanPham)
 );
 
--- Tạo bảng NhanVien
-CREATE TABLE NhanVien (
-    id_NhanVien INT PRIMARY KEY ,
-    TenNhanVien NVARCHAR(100) NOT NULL,
-    sodienthoai NVARCHAR(20),
-    email NVARCHAR(100)
-);
 
 -- Tạo bảng TaiKhoan
 CREATE TABLE TaiKhoan (
@@ -67,7 +64,20 @@ CREATE TABLE TaiKhoan (
     TrangThai NVARCHAR(50),
     Quyen NVARCHAR(100),
 );
+
+CREATE TABLE KhachHang(
+     id_KhachHang INT PRIMARY KEY , 
+	 TENKH NVARCHAR(30) NOT NULL ,
+     DT VARCHAR(11) CHECK(DT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]' 
+	                         OR DT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+							 OR DT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+							 OR DT LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
+							 OR DT IS NULL) , 
+	 EMAIL VARCHAR(30) 
+);
 select * from NhanVien;
 select * from TaiKhoan;
 drop table TaiKhoan
+
+insert into TaiKhoan values ('Nguyen Van Tru','123456789',N'Hoạt động','Admin'),('Nguyen Van Thu','123456789',N'Hoạt động','Thu Ngân');
 

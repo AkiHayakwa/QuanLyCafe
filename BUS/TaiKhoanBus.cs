@@ -88,17 +88,32 @@ namespace BUS
             }
         }
 
-        public bool Login(string tenNguoiDung, string matKhau)
+        public string Login(string tenNguoiDung, string matKhau)
         {
             try
             {
-                return taiKhoanDao.Login(tenNguoiDung, matKhau);
+                return taiKhoanDao.Login(tenNguoiDung, matKhau); // Trả về quyền người dùng
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi đăng nhập: " + ex.Message);
             }
         }
+
+        public bool ResetPassword(string username, string newPassword)
+        {
+            try
+            {
+                // Gọi phương thức ResetPassword trong DAO để thực hiện thao tác cập nhật mật khẩu trong CSDL
+                return taiKhoanDao.ResetPassword(username, newPassword);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi và ném lại thông báo lỗi cho lớp gọi
+                throw new Exception("Lỗi khi xử lý reset mật khẩu: " + ex.Message);
+            }
+        }
+
 
     }
 }

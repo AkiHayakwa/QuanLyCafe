@@ -222,6 +222,12 @@
     <Compile Include="GiaoDienAdminThemNguoiDung.Designer.cs">
       <DependentUpon>GiaoDienAdminThemNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaoDienAdminThemSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GiaoDienAdminThemSP.Designer.cs">
+      <DependentUpon>GiaoDienAdminThemSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDienDangki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDienAdminThemNguoiDung.resx">
       <DependentUpon>GiaoDienAdminThemNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDienAdminThemSP.resx">
+      <DependentUpon>GiaoDienAdminThemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaoDienDangki.resx">
       <DependentUpon>GiaoDienDangki.cs</DependentUpon>

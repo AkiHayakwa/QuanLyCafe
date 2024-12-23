@@ -25,7 +25,7 @@ namespace DTO
             MatKhau = matKhau;
             TrangThai = trangThai;
             Quyen = quyen;
-         
         }
+
     }
 }

@@ -64,8 +64,8 @@ namespace GUI
             {
                 TenNguoiDung = Register_username.Text,
                 MatKhau = Register_password.Text,
-                TrangThai = "Active",
-                Quyen = "User",          
+                TrangThai = "Hoạt động",
+                Quyen = "Thu Ngân",          
             };
 
             TaiKhoanBus bus = new TaiKhoanBus();

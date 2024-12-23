@@ -41,7 +41,7 @@
             this.Login_username = new System.Windows.Forms.TextBox();
             this.login_password = new System.Windows.Forms.TextBox();
             this.login_showpassword = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Lb_quenMatKhau = new System.Windows.Forms.Label();
             this.login_close = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -185,17 +185,18 @@
             this.login_showpassword.UseVisualStyleBackColor = true;
             this.login_showpassword.CheckedChanged += new System.EventHandler(this.login_showpassword_CheckedChanged);
             // 
-            // label5
+            // Lb_quenMatKhau
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.Lb_quenMatKhau.AutoSize = true;
+            this.Lb_quenMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(332, 462);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 19);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Quên mật khẩu ?";
+            this.Lb_quenMatKhau.Location = new System.Drawing.Point(332, 462);
+            this.Lb_quenMatKhau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lb_quenMatKhau.Name = "Lb_quenMatKhau";
+            this.Lb_quenMatKhau.Size = new System.Drawing.Size(117, 19);
+            this.Lb_quenMatKhau.TabIndex = 8;
+            this.Lb_quenMatKhau.Text = "Quên mật khẩu ?";
+            this.Lb_quenMatKhau.Click += new System.EventHandler(this.label5_Click);
             // 
             // login_close
             // 
@@ -215,7 +216,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(658, 572);
             this.Controls.Add(this.login_close);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Lb_quenMatKhau);
             this.Controls.Add(this.login_showpassword);
             this.Controls.Add(this.login_password);
             this.Controls.Add(this.Login_username);
@@ -249,7 +250,7 @@
         private System.Windows.Forms.TextBox Login_username;
         private System.Windows.Forms.TextBox login_password;
         private System.Windows.Forms.CheckBox login_showpassword;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Lb_quenMatKhau;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button login_registerbtn;
         private System.Windows.Forms.Label login_close;

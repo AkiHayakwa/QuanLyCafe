@@ -17,6 +17,10 @@ namespace GUI
             InitializeComponent();
         }
 
+        public void displayAddUser()
+        {
+
+        }
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -28,6 +32,16 @@ namespace GUI
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GiaoDienAdminDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
