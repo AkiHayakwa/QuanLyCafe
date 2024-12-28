@@ -16,5 +16,31 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát chương trình ? ", "Đồng ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có muốn đăng xuất ?", "Đồng ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+
+                this.Hide();
+            }
+        }
+
+        private void giaoDienThuNganDatMon1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

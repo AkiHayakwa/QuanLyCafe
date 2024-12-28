@@ -27,25 +27,7 @@ namespace GUI
 
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            // Khởi tạo UserControl mới
-            GiaoDienAdminDashboard giaoDienAdminDashBoard = new GiaoDienAdminDashboard();
-
-            // Kiểm tra xem UserControl đã được thêm vào chưa
-            if (!this.Controls.Contains(giaoDienAdminDashBoard))
-            {
-                // Thêm UserControl vào form
-                giaoDienAdminDashBoard.Dock = DockStyle.None; // Không dùng DockStyle.Fill để tự do điều chỉnh vị trí
-                this.Controls.Add(giaoDienAdminDashBoard);
-
-                // Căn chỉnh UserControl vào giữa form
-                giaoDienAdminDashBoard.Location = new Point(
-       (1251 - giaoDienAdminDashBoard.Width) / 2,
-       (745 - giaoDienAdminDashBoard.Height) / 2
-   );
-            }
-        }
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -69,6 +51,37 @@ namespace GUI
         }
 
         private void giaoDienAdminThemNguoiDung1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            giaoDienAdminThemNguoiDung1.Visible = true;
+            giaoDienAdminThemSP1.Visible = false;
+            giaoDienThongKe1.Visible = false;
+        }
+
+        private void giaoDienThongKe1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            giaoDienAdminThemNguoiDung1.Visible = false;
+            giaoDienAdminThemSP1.Visible = false;
+            giaoDienThongKe1.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            giaoDienAdminThemNguoiDung1.Visible = false;
+            giaoDienAdminThemSP1.Visible = true;
+            giaoDienThongKe1.Visible = false;
+        }
+
+        private void giaoDienAdminThemSP1_Load(object sender, EventArgs e)
         {
 
         }

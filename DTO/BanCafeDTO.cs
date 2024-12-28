@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class BanCafeDTO
+    public class BanCafeDTO
     {
         public int IdBan { get; set; }
         public string TenBan { get; set; }

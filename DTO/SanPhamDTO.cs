@@ -1,30 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
-namespace DTO
-{
-    internal class SanPhamDTO
+    namespace DTO
     {
-        private int id_SanPham {  get; set; }
-        private string TenSanPham { get; set; }
-        
-        private decimal giaMua {  get; set; }
-
-        private int id_DanhMuc { get; set; }
-
-
-        public SanPhamDTO() { }
-
-        public SanPhamDTO(int id_SanPham, string TenSanPham, decimal giaMua, int id_DanhMuc)
+        public class SanPhamDTO
         {
-            this.id_SanPham = id_SanPham;
-            this.TenSanPham = TenSanPham;
-            this.giaMua = giaMua;
-            this.id_DanhMuc = id_DanhMuc;
+            public int Id_SanPham { get; set; }
+            public string TenSanPham { get; set; }
+            public decimal GiaMua { get; set; }
+            public int SoLuongTon { get; set; }
+            public string TrangThai { get; set; }
+            public int Id_DanhMuc { get; set; }
+
+            public SanPhamDTO() { }
+
+            public SanPhamDTO(int id_SanPham, string tenSanPham, decimal giaMua, int soLuongTon, string trangThai, int id_DanhMuc)
+            {
+                Id_SanPham = id_SanPham;
+                TenSanPham = tenSanPham;
+                GiaMua = giaMua;
+                SoLuongTon = soLuongTon;
+                TrangThai = trangThai;
+                Id_DanhMuc = id_DanhMuc;
+            }
         }
     }
-}

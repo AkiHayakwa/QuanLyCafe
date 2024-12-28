@@ -180,5 +180,54 @@ namespace GUI
             }
         }
 
+        public void clearFields()
+        {
+            AdminAddUser_username.Text = "";
+            AdminAddUser_password.Text = "";
+            AdminAddUser_Role.SelectedIndex = -1;
+            AdminAddUser_Status.SelectedIndex = -1;
+        }
+        private void btnClearUser_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra các trường có trống không
+            if (emptyField())
+            {
+                MessageBox.Show("Tài khoản, mật khẩu và các thông tin không được để trống.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa người dùng : " + AdminAddUser_username.Text.Trim() + "?", "Thông Báo đồng ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            try
+            {
+                // Lấy thông tin từ các TextBox
+
+
+                // Tạo đối tượng TaiKhoanDTO
+
+                // Gọi hàm cập nhật trong BUS
+                TaiKhoanBus taiKhoanBus = new TaiKhoanBus();
+                bool isDeleted = taiKhoanBus.DeleteTaiKhoan(id);
+
+                // Thông báo kết quả
+                if (isDeleted)
+                {
+                    MessageBox.Show("Xóa tài khoản thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDataGridView(); // Tải lại danh sách tài khoản sau khi xóa
+                }
+                else
+                {
+                    MessageBox.Show("Xóa tài khoản thất bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

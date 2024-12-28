@@ -42,7 +42,9 @@
             this.btnThongKe = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.giaoDienThongKe1 = new GUI.GiaoDienThongKe();
             this.giaoDienAdminThemNguoiDung1 = new GUI.GiaoDienAdminThemNguoiDung();
+            this.giaoDienAdminThemSP1 = new GUI.GiaoDienAdminThemSP();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +59,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1320, 30);
+            this.panel1.Size = new System.Drawing.Size(1500, 30);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -66,7 +68,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(570, 6);
+            this.label2.Location = new System.Drawing.Point(642, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 20);
@@ -78,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1291, 6);
+            this.label1.Location = new System.Drawing.Point(1471, 7);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 17);
@@ -102,7 +104,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(192, 641);
+            this.panel2.Size = new System.Drawing.Size(192, 722);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -168,6 +170,7 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Thêm Sản Phẩm";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -181,6 +184,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Thêm Người Dùng";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnThongKe
             // 
@@ -222,20 +226,38 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Cổng Quản Trị";
             // 
+            // giaoDienThongKe1
+            // 
+            this.giaoDienThongKe1.Location = new System.Drawing.Point(177, 29);
+            this.giaoDienThongKe1.Name = "giaoDienThongKe1";
+            this.giaoDienThongKe1.Size = new System.Drawing.Size(1251, 745);
+            this.giaoDienThongKe1.TabIndex = 4;
+            this.giaoDienThongKe1.Load += new System.EventHandler(this.giaoDienThongKe1_Load);
+            // 
             // giaoDienAdminThemNguoiDung1
             // 
-            this.giaoDienAdminThemNguoiDung1.Location = new System.Drawing.Point(182, 28);
+            this.giaoDienAdminThemNguoiDung1.Location = new System.Drawing.Point(176, 30);
             this.giaoDienAdminThemNguoiDung1.Margin = new System.Windows.Forms.Padding(2);
             this.giaoDienAdminThemNguoiDung1.Name = "giaoDienAdminThemNguoiDung1";
-            this.giaoDienAdminThemNguoiDung1.Size = new System.Drawing.Size(1500, 790);
+            this.giaoDienAdminThemNguoiDung1.Size = new System.Drawing.Size(1251, 745);
             this.giaoDienAdminThemNguoiDung1.TabIndex = 2;
             this.giaoDienAdminThemNguoiDung1.Load += new System.EventHandler(this.giaoDienAdminThemNguoiDung1_Load);
+            // 
+            // giaoDienAdminThemSP1
+            // 
+            this.giaoDienAdminThemSP1.Location = new System.Drawing.Point(178, 30);
+            this.giaoDienAdminThemSP1.Name = "giaoDienAdminThemSP1";
+            this.giaoDienAdminThemSP1.Size = new System.Drawing.Size(1251, 745);
+            this.giaoDienAdminThemSP1.TabIndex = 5;
+            this.giaoDienAdminThemSP1.Load += new System.EventHandler(this.giaoDienAdminThemSP1_Load);
             // 
             // GiaoDienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1320, 671);
+            this.ClientSize = new System.Drawing.Size(1500, 752);
+            this.Controls.Add(this.giaoDienAdminThemSP1);
+            this.Controls.Add(this.giaoDienThongKe1);
             this.Controls.Add(this.giaoDienAdminThemNguoiDung1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -268,5 +290,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private GiaoDienAdminThemNguoiDung giaoDienAdminThemNguoiDung1;
+        private GiaoDienThongKe giaoDienThongKe1;
+        private GiaoDienAdminThemSP giaoDienAdminThemSP1;
     }
 }

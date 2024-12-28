@@ -10,15 +10,17 @@ go
 
 -- Tạo bảng DanhMuc
 CREATE TABLE DanhMuc (
-    id_DanhMuc INT PRIMARY KEY ,
-		 NVARCHAR(100) NOT NULL
+    id_DanhMuc INT IDENTITY(1,1) PRIMARY KEY ,
+	TenDanhMuc NVARCHAR(100) NOT NULL
 );
-
+Drop table DanhMuc;
 -- Tạo bảng SanPham
 CREATE TABLE SanPham (
     id_SanPham INT PRIMARY KEY ,
     TenSanPham NVARCHAR(100) NOT NULL,
     giaMua DECIMAL(10, 2) NOT NULL,
+	SoLuongTon int not null , 
+	TrangThai NVARCHAR(50) NOT NULL , 
     id_DanhMuc INT,
     FOREIGN KEY (id_DanhMuc) REFERENCES DanhMuc(id_DanhMuc)
 );
@@ -79,5 +81,12 @@ select * from NhanVien;
 select * from TaiKhoan;
 drop table TaiKhoan
 
+select * from SanPham;
 insert into TaiKhoan values ('Nguyen Van Tru','123456789',N'Hoạt động','Admin'),('Nguyen Van Thu','123456789',N'Hoạt động','Thu Ngân');
 
+
+insert into DanhMuc values (N'Cafe'),(N'Bánh Ngọt'),(N'Sinh tố'),(N'Trà sữa')
+
+
+select * from SanPham;
+select * from DanhMuc;

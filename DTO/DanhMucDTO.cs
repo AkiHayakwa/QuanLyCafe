@@ -8,7 +8,7 @@ namespace DTO
 {
     public  class DanhMucDTO
     {
-        private int Id_danhMuc {  get; set; }
+        public int Id_danhMuc {  get; set; }
 
         public string TenDanhMuc { get; set; }
 
