@@ -313,3 +313,4 @@ D:\CodeSoEasy\LapTrinhWindows\QuanLyQuanCaPhe\QuanLyCafe\GUI\obj\Debug\GUI.Admin
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThuNgan.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdminThemSP.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThongKe.resources
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienChuyenDoiBan.resources

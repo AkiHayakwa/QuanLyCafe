@@ -55,8 +55,13 @@
                 else
                 {
                     TaiKhoanBus taikhoanbus = new TaiKhoanBus();
-                    string quyen = taikhoanbus.Login(Login_username.Text, login_password.Text); // Lấy quyền người dùng
-
+                string password = login_password.Text;
+                if(password == "")
+                {
+                    MessageBox.Show("lỗi không cho có dấu cách ");
+                }
+                    string quyen = taikhoanbus.Login(Login_username.Text, password); // Lấy quyền người dùng
+                    
                     if (quyen != null)
                     {
                         MessageBox.Show("Đăng nhập thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,12 +130,12 @@
                 resetPasswordForm.Text = "Đổi mật khẩu"; // Tiêu đề form
                 resetPasswordForm.Size = new Size(300, 150); // Kích thước form
 
-                // Tạo TextBox cho mật khẩu mới với PlaceholderText giả lập
+                
                 TextBox txtNewPassword = new TextBox()
                 {
-                    Text = "Nhập mật khẩu mới...", // Placeholder
+                    Text = "Nhập mật khẩu mới...", 
                     PasswordChar = '*',
-                    Dock = DockStyle.Top,
+                    Dock = DockStyle.Bottom,
                     Margin = new Padding(10),
                     ForeColor = Color.Gray
                 };

@@ -1,120 +1,137 @@
-﻿using System;
-using System.Collections.Generic;
-using DAO;
-using DTO;
+﻿    using System;
+    using System.Collections.Generic;
+    using DAO;
+    using DTO;
 
-namespace BUS
-{
-    public class SanPhamBUS
+    namespace BUS
     {
-        private SanPhamDAO sanPhamDAO;
-
-        public SanPhamBUS()
+        public class SanPhamBUS
         {
-            sanPhamDAO = new SanPhamDAO();
-        }
+            private SanPhamDAO sanPhamDAO;
 
-        // Lấy danh sách tất cả sản phẩm
-        public List<SanPhamDTO> GetAllSanPham()
-        {
-            try
+            public SanPhamBUS()
             {
-                return sanPhamDAO.GetAllSanPham();
+                sanPhamDAO = new SanPhamDAO();
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi lấy danh sách sản phẩm từ DAO: " + ex.Message);
-            }
-        }
 
-        // Thêm sản phẩm
-        public bool AddSanPham(SanPhamDTO sanPham)
-        {
-            try
+            // Lấy danh sách tất cả sản phẩm
+            public List<SanPhamDTO> GetAllSanPham()
             {
-                if (string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
+                try
                 {
-                    throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
+                    return sanPhamDAO.GetAllSanPham();
                 }
-
-                return sanPhamDAO.AddSanPham(sanPham);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi thêm sản phẩm vào DAO: " + ex.Message);
-            }
-        }
-
-        // Cập nhật sản phẩm
-        public bool UpdateSanPham(SanPhamDTO sanPham)
-        {
-            try
-            {
-                if (sanPham.Id_SanPham <= 0 || string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
+                catch (Exception ex)
                 {
-                    throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
+                    throw new Exception("Lỗi khi lấy danh sách sản phẩm từ DAO: " + ex.Message);
                 }
-
-                return sanPhamDAO.UpdateSanPham(sanPham);
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi cập nhật sản phẩm vào DAO: " + ex.Message);
-            }
-        }
 
-        // Xóa sản phẩm
-        public bool DeleteSanPham(int idSanPham)
-        {
-            try
+            // Thêm sản phẩm
+            public bool AddSanPham(SanPhamDTO sanPham)
             {
-                if (idSanPham <= 0)
+                try
                 {
-                    throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                    if (string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
+                    {
+                        throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
+                    }
+
+                    return sanPhamDAO.AddSanPham(sanPham);
                 }
-
-                return sanPhamDAO.DeleteSanPham(idSanPham);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi xóa sản phẩm từ DAO: " + ex.Message);
-            }
-        }
-
-        // Lấy sản phẩm theo ID
-        public SanPhamDTO GetSanPhamById(int idSanPham)
-        {
-            try
-            {
-                if (idSanPham <= 0)
+                catch (Exception ex)
                 {
-                    throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                    throw new Exception("Lỗi khi thêm sản phẩm vào DAO: " + ex.Message);
                 }
-
-                return sanPhamDAO.GetSanPhamById(idSanPham);
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi lấy sản phẩm từ DAO: " + ex.Message);
-            }
-        }
 
-        public List<SanPhamDTO> GetSanPhamByIdDanhMuc(int idDanhMuc)
-        {
-            try
+            // Cập nhật sản phẩm
+            public bool UpdateSanPham(SanPhamDTO sanPham)
             {
-                if (idDanhMuc <= 0)
+                try
                 {
-                    throw new ArgumentException("ID danh mục không hợp lệ.");
+                    if (sanPham.Id_SanPham <= 0 || string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
+                    {
+                        throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
+                    }
+
+                    return sanPhamDAO.UpdateSanPham(sanPham);
                 }
-
-                return sanPhamDAO.GetSanPhamByIdDanhMuc(idDanhMuc);
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi cập nhật sản phẩm vào DAO: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+
+            // Xóa sản phẩm
+            public bool DeleteSanPham(int idSanPham)
             {
-                throw new Exception("Lỗi khi lấy sản phẩm theo ID danh mục từ DAO: " + ex.Message);
-            }
-        }
+                try
+                {
+                    if (idSanPham <= 0)
+                    {
+                        throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                    }
 
+                    return sanPhamDAO.DeleteSanPham(idSanPham);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi xóa sản phẩm từ DAO: " + ex.Message);
+                }
+            }
+
+            // Lấy sản phẩm theo ID
+            public SanPhamDTO GetSanPhamById(int idSanPham)
+            {
+                try
+                {
+                    if (idSanPham <= 0)
+                    {
+                        throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                    }
+
+                    return sanPhamDAO.GetSanPhamById(idSanPham);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi lấy sản phẩm từ DAO: " + ex.Message);
+                }
+            }
+
+            public List<SanPhamDTO> GetSanPhamByIdDanhMuc(int idDanhMuc)
+            {
+                try
+                {
+                    if (idDanhMuc <= 0)
+                    {
+                        throw new ArgumentException("ID danh mục không hợp lệ.");
+                    }
+
+                    return sanPhamDAO.GetSanPhamByIdDanhMuc(idDanhMuc);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi lấy sản phẩm theo ID danh mục từ DAO: " + ex.Message);
+                }
+            }
+
+        public bool GiamSoLuongTon(int idSanPham, int soLuongGiam)
+{
+    try
+    {
+        SanPhamDTO sanPham = sanPhamDAO.GetSanPhamById(idSanPham);
+        if (sanPham.SoLuongTon < soLuongGiam)
+        {
+            throw new Exception("Số lượng tồn không đủ.");
+        }
+        return sanPhamDAO.UpdateSoLuongTon(idSanPham, sanPham.SoLuongTon - soLuongGiam);
+    }
+    catch (Exception ex)
+    {
+        throw new Exception("Lỗi khi giảm số lượng tồn: " + ex.Message);
     }
 }
+
+        }
+    }

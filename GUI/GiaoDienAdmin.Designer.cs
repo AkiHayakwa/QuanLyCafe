@@ -42,9 +42,9 @@
             this.btnThongKe = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.giaoDienAdminThemSP1 = new GUI.GiaoDienAdminThemSP();
             this.giaoDienThongKe1 = new GUI.GiaoDienThongKe();
             this.giaoDienAdminThemNguoiDung1 = new GUI.GiaoDienAdminThemNguoiDung();
-            this.giaoDienAdminThemSP1 = new GUI.GiaoDienAdminThemSP();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,6 +191,7 @@
             this.btnThongKe.BackColor = System.Drawing.Color.DarkCyan;
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.Transparent;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThongKe.Location = new System.Drawing.Point(17, 240);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.btnThongKe.Name = "btnThongKe";
@@ -226,6 +227,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Cổng Quản Trị";
             // 
+            // giaoDienAdminThemSP1
+            // 
+            this.giaoDienAdminThemSP1.Location = new System.Drawing.Point(177, 30);
+            this.giaoDienAdminThemSP1.Name = "giaoDienAdminThemSP1";
+            this.giaoDienAdminThemSP1.Size = new System.Drawing.Size(1252, 745);
+            this.giaoDienAdminThemSP1.TabIndex = 5;
+            this.giaoDienAdminThemSP1.Load += new System.EventHandler(this.giaoDienAdminThemSP1_Load);
+            // 
             // giaoDienThongKe1
             // 
             this.giaoDienThongKe1.Location = new System.Drawing.Point(177, 29);
@@ -242,14 +251,6 @@
             this.giaoDienAdminThemNguoiDung1.Size = new System.Drawing.Size(1251, 745);
             this.giaoDienAdminThemNguoiDung1.TabIndex = 2;
             this.giaoDienAdminThemNguoiDung1.Load += new System.EventHandler(this.giaoDienAdminThemNguoiDung1_Load);
-            // 
-            // giaoDienAdminThemSP1
-            // 
-            this.giaoDienAdminThemSP1.Location = new System.Drawing.Point(178, 30);
-            this.giaoDienAdminThemSP1.Name = "giaoDienAdminThemSP1";
-            this.giaoDienAdminThemSP1.Size = new System.Drawing.Size(1251, 745);
-            this.giaoDienAdminThemSP1.TabIndex = 5;
-            this.giaoDienAdminThemSP1.Load += new System.EventHandler(this.giaoDienAdminThemSP1_Load);
             // 
             // GiaoDienAdmin
             // 

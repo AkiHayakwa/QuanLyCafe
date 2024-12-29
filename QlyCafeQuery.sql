@@ -90,3 +90,22 @@ insert into DanhMuc values (N'Cafe'),(N'Bánh Ngọt'),(N'Sinh tố'),(N'Trà s�
 
 select * from SanPham;
 select * from DanhMuc;
+go
+CREATE TRIGGER trg_UpdateSanPham
+ON SanPham
+AFTER UPDATE
+AS
+BEGIN
+    -- Kiểm tra nếu số lượng tồn được cập nhật và bằng 0
+    IF EXISTS (SELECT * FROM inserted WHERE SoLuongTon = 0)
+    BEGIN
+        -- Cập nhật trạng thái sản phẩm thành "Không còn" nếu số lượng tồn = 0
+        UPDATE SanPham
+        SET TrangThai = 'Không còn'
+        FROM SanPham sp
+        INNER JOIN inserted i ON sp.id_SanPham = i.id_SanPham
+        WHERE i.SoLuongTon = 0;
+    END
+END
+
+delete from sanpham 

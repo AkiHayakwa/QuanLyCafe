@@ -104,6 +104,7 @@ namespace GUI
                 }
 
                 // Lấy thông tin từ các TextBox và ComboBox
+                int id_sanpham = Convert.ToInt32(AdmPrd_IdPrd.Text);
                 string tenSanPham = AdmPrd_NamePrd.Text;
                 decimal giaMua = Convert.ToDecimal(AdmPrd_Price.Text);
                 int soLuongTon = Convert.ToInt32(AdmPrd_Stock.Text);
@@ -120,10 +121,10 @@ namespace GUI
                 int idDanhMuc = selectedDanhMuc.Id_danhMuc;
 
                 // Debug thông tin sản phẩm trước khi thêm
-                MessageBox.Show($"Tên sản phẩm: {tenSanPham}, Giá mua: {giaMua}, Số lượng tồn: {soLuongTon}, Trạng thái: {trangThai}, ID danh mục: {idDanhMuc}");
+                MessageBox.Show($"Id Sản phẩm : {id_sanpham} , Tên sản phẩm: {tenSanPham}, Giá mua: {giaMua}, Số lượng tồn: {soLuongTon}, Trạng thái: {trangThai}, ID danh mục: {idDanhMuc}");
 
                 // Tạo đối tượng SanPhamDTO
-                SanPhamDTO sanPham = new SanPhamDTO(0, tenSanPham, giaMua, soLuongTon, trangThai, idDanhMuc);
+                SanPhamDTO sanPham = new SanPhamDTO(id_sanpham, tenSanPham, giaMua, soLuongTon, trangThai, idDanhMuc);
 
                 // Thêm sản phẩm vào cơ sở dữ liệu
                 SanPhamBUS sanPhambus = new SanPhamBUS();
@@ -222,6 +223,13 @@ namespace GUI
                 int idSanPham;
                 if (int.TryParse(AdmPrd_IdPrd.Text, out idSanPham))
                 {
+                    // Kiểm tra xem ID sản phẩm có hợp lệ hay không
+                    if (idSanPham <= 0)
+                    {
+                        MessageBox.Show("ID sản phẩm phải lớn hơn 0.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     // Xác nhận lại với người dùng trước khi xóa
                     var result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm có ID {idSanPham}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     SanPhamBUS sanPhambus = new SanPhamBUS();

@@ -97,14 +97,21 @@ namespace GUI
 
         private void GiaoDienThuNganDatMon_Load(object sender, EventArgs e)
         {
+            InitializeDgvOrder();
+        }
+
+        private void InitializeDgvOrder()
+        {
             if (dgv_Order.Columns.Count == 0)
             {
-                dgv_Order.Columns.Add("TenSanPham", "Tên Sản Phẩm");
-                dgv_Order.Columns.Add("GiaBan", "Đơn Giá");
-                dgv_Order.Columns.Add("SoLuong", "Số Lượng");
+                dgv_Order.Columns.Add("IdSanPham", "ID Sản phẩm");
+                dgv_Order.Columns.Add("TenSanPham", "Tên Sản phẩm");
+                dgv_Order.Columns.Add("SoLuong", "Số lượng");
+                dgv_Order.Columns.Add("DonGia", "Đơn giá");
+                dgv_Order.Columns.Add("TongTien", "Tổng Tiền");
             }
-            LoadDanhMuc();
         }
+
 
         private void dgv_Prd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -113,82 +120,53 @@ namespace GUI
 
         private void dgv_Prd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra nếu chỉ số dòng hợp lệ
             if (e.RowIndex >= 0)
             {
-                // Kiểm tra nếu các cột "TenSanPham" và "GiaBan" tồn tại
-                if (!dgv_Prd.Columns.Contains("TenSanPham"))
+                // Lấy thông tin sản phẩm
+                int idSanPham = Convert.ToInt32(dgv_Prd.Rows[e.RowIndex].Cells["id_SanPham"].Value);
+                string tenSanPham = dgv_Prd.Rows[e.RowIndex].Cells["TenSanPham"].Value.ToString();
+                decimal giaSanPham = Convert.ToDecimal(dgv_Prd.Rows[e.RowIndex].Cells["GiaMua"].Value);
+                int soLuongTonHienTai = Convert.ToInt32(dgv_Prd.Rows[e.RowIndex].Cells["SoLuongTon"].Value);
+
+                // Kiểm tra số lượng tồn
+                if (soLuongTonHienTai > 0)
                 {
-                    MessageBox.Show("Cột 'TenSanPham' không tồn tại!", "Lỗi");
-                    return; // Dừng nếu cột không tồn tại
-                }
+                    // Thêm sản phẩm vào giỏ hàng
+                    bool productExists = false;
 
-                if (!dgv_Prd.Columns.Contains("GiaMua"))
-                {
-                    MessageBox.Show("Cột 'GiaBan' không tồn tại!", "Lỗi");
-                    return; // Dừng nếu cột không tồn tại
-                }
-
-                // Lấy ô cột "TenSanPham" và "GiaBan"
-                var tenSanPhamCell = dgv_Prd.Rows[e.RowIndex].Cells["TenSanPham"];
-                var giaBanCell = dgv_Prd.Rows[e.RowIndex].Cells["GiaMua"];
-
-                // Kiểm tra nếu các ô này có giá trị hợp lệ (không phải null hoặc DBNull)
-                if (tenSanPhamCell != null && tenSanPhamCell.Value != DBNull.Value && giaBanCell != null && giaBanCell.Value != DBNull.Value)
-                {
-                    string tenSanPham = tenSanPhamCell.Value.ToString();
-                    string giaBan = giaBanCell.Value.ToString();
-
-                    // Hiển thị hộp thoại xác nhận
-                    DialogResult result = MessageBox.Show($"Bạn muốn order sản phẩm '{tenSanPham}' không?", "Xác nhận Order", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
+                    foreach (DataGridViewRow row in dgv_Order.Rows)
                     {
-                        bool daTonTai = false;
-
-                        // Kiểm tra xem sản phẩm đã có trong đơn hàng chưa
-                        foreach (DataGridViewRow row in dgv_Order.Rows)
+                        // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ hàng
+                        if (Convert.ToInt32(row.Cells["IdSanPham"].Value) == idSanPham)
                         {
-                            if (row.Cells["TenSanPham"]?.Value != null && row.Cells["TenSanPham"].Value.ToString() == tenSanPham)
-                            {
-                                try
-                                {
-                                    int soLuongHienTai = 0;
-                                    if (row.Cells["SoLuong"]?.Value != null)
-                                    {
-                                        int.TryParse(row.Cells["SoLuong"].Value.ToString(), out soLuongHienTai);
-                                    }
+                            // Cập nhật số lượng
+                            int currentQuantity = Convert.ToInt32(row.Cells["SoLuong"].Value);
+                            row.Cells["SoLuong"].Value = currentQuantity + 1;
 
-                                    // Tăng số lượng sản phẩm
-                                    row.Cells["SoLuong"].Value = soLuongHienTai + 1;
-                                    daTonTai = true;
-                                    break;
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show($"Lỗi khi tăng số lượng: {ex.Message}", "Lỗi");
-                                }
-                            }
-                        }
+                            // Cập nhật tổng tiền
+                            decimal totalPrice = Convert.ToInt32(row.Cells["SoLuong"].Value) * giaSanPham;
+                            row.Cells["TongTien"].Value = totalPrice;
 
-                        // Nếu sản phẩm chưa có trong đơn hàng, thêm mới
-                        if (!daTonTai)
-                        {
-                            dgv_Order.Rows.Add(tenSanPham, giaBan, 1);
+                            productExists = true;
+                            break;
                         }
+                    }
+
+                    if (!productExists)
+                    {
+                        // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
+                        dgv_Order.Rows.Add(idSanPham, tenSanPham, 1, giaSanPham, giaSanPham); // Mặc định số lượng = 1, tính tổng tiền = đơn giá
+
+                        // Cập nhật số lượng tồn
+                        dgv_Prd.Rows[e.RowIndex].Cells["SoLuongTon"].Value = soLuongTonHienTai - 1;
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Dữ liệu không hợp lệ trong các ô 'Tên Sản Phẩm' hoặc 'Giá Bán'.", "Lỗi");
+                    MessageBox.Show("Sản phẩm này không còn đủ số lượng.", "Lỗi");
                 }
             }
-            else
-            {
-                MessageBox.Show("Chọn một dòng hợp lệ trong bảng.", "Lỗi");
-            }
         }
-
 
         private void LoadDanhMuc()
         {
@@ -278,6 +256,11 @@ namespace GUI
         private void dgv_Order_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     } 
  }

@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\FileWinform\\QuanLyCafeProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\sanphamdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\sanphamdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadminthemsp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemsp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadminthemsp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemsp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|d:\\filewinform\\quanlycafeproject\\gui\\giaodienchuyendoiban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienchuyendoiban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|D:\\FileWinform\\QuanLyCafeProject\\bus\\sanphambus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|solutionrelative:bus\\sanphambus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungannguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungannguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienchuyendoiban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienchuyendoiban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -27,27 +31,75 @@
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodiendangki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodiendangki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\sanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\sanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadminthemnguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemnguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|d:\\filewinform\\quanlycafeproject\\gui\\giaodienchuyendoiban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienchuyendoiban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodiendangki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodiendangki.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungannguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungannguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadminthemnguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemnguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\danhmucdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\danhmucdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|D:\\FileWinform\\QuanLyCafeProject\\bus\\danhmucbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|solutionrelative:bus\\danhmucbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\khachhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\khachhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\danhmucdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\danhmucdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\bancafedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\bancafedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\chitiethoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\chitiethoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|d:\\filewinform\\quanlycafeproject\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -59,19 +111,19 @@
       "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\taikhoandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienchuyendoiban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienchuyendoiban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\khachhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\khachhangdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\hoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|d:\\filewinform\\quanlycafeproject\\dao\\hoadondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\hoadondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\hoadondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -79,40 +131,8 @@
       "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\sanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\sanphamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\sanphamdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\sanphamdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungandatmon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|D:\\FileWinform\\QuanLyCafeProject\\bus\\sanphambus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|solutionrelative:bus\\sanphambus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\taikhoandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\danhmucdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\danhmucdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|D:\\FileWinform\\QuanLyCafeProject\\bus\\danhmucbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|solutionrelative:bus\\danhmucbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A551317F-C931-471C-A249-0111AC3B9B88}|BUS\\BUS.csproj|D:\\FileWinform\\QuanLyCafeProject\\bus\\hoadonbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -131,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadminthemsp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemsp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthungandatmon.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthungandatmon.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -149,14 +165,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dao\\bancafedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60C95C9A-41AD-4CDA-93A7-B9B48CF3DDD9}|DAO\\DAO.csproj|solutionrelative:dao\\bancafedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\chitiethoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\chitiethoadondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\bancafedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\bancafedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -175,16 +183,8 @@
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemsp.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienadminthemnguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienadminthemnguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|D:\\FileWinform\\QuanLyCafeProject\\gui\\giaodienthongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8533BF5F-212E-4C40-85F7-E05248A2F207}|GUI\\GUI.csproj|solutionrelative:gui\\giaodienthongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\danhmucdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|solutionrelative:dto\\danhmucdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43D9C13F-FE5F-40EE-8042-EDA5B9F73660}|DTO\\DTO.csproj|D:\\FileWinform\\QuanLyCafeProject\\dto\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -226,7 +226,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 38,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -234,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Program.cs",
               "RelativeDocumentMoniker": "GUI\\Program.cs",
@@ -247,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
@@ -259,8 +259,20 @@
               "EditorCaption": " [Design]"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 27,
               "Title": "GiaoDienChuyenDoiBan.Designer.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienChuyenDoiBan.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienChuyenDoiBan.Designer.cs",
@@ -273,7 +285,95 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SanPhamBus.cs",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\SanPhamBus.cs",
+              "RelativeDocumentMoniker": "BUS\\SanPhamBus.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\SanPhamBus.cs",
+              "RelativeToolTip": "BUS\\SanPhamBus.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAADwv1IAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T16:07:48.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SanPhamDAO.cs",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\SanPhamDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\SanPhamDAO.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\SanPhamDAO.cs",
+              "RelativeToolTip": "DAO\\SanPhamDAO.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAkwDkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T16:07:24.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "GiaoDienAdminThemSP.cs [Design]",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs",
+              "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemSP.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs [Design]",
+              "RelativeToolTip": "GUI\\GiaoDienAdminThemSP.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T14:11:04.94Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GiaoDienAdminThemSP.cs",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs",
+              "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemSP.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs",
+              "RelativeToolTip": "GUI\\GiaoDienAdminThemSP.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAgwIIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T17:46:22.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GiaoDienThuNganDatMon.cs [Design]",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.cs",
+              "RelativeDocumentMoniker": "GUI\\GiaoDienThuNganDatMon.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.cs [Design]",
+              "RelativeToolTip": "GUI\\GiaoDienThuNganDatMon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T07:03:53.066Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GiaoDienAdmin.cs [Design]",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdmin.cs",
+              "RelativeDocumentMoniker": "GUI\\GiaoDienAdmin.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdmin.cs [Design]",
+              "RelativeToolTip": "GUI\\GiaoDienAdmin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:04:56.693Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Form1.cs",
+              "RelativeDocumentMoniker": "GUI\\Form1.cs",
+              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Form1.cs",
+              "RelativeToolTip": "GUI\\Form1.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAnwJEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T08:41:46.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GiaoDienChuyenDoiBan.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienChuyenDoiBan.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienChuyenDoiBan.cs",
@@ -284,16 +384,8 @@
               "EditorCaption": " [Design]"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "HoaDonDAO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\HoaDonDAO.cs",
               "RelativeDocumentMoniker": "DAO\\HoaDonDAO.cs",
@@ -301,12 +393,11 @@
               "RelativeToolTip": "DAO\\HoaDonDAO.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowAsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T13:48:46.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T13:48:46.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "packages.config",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\packages.config",
               "RelativeDocumentMoniker": "DAO\\packages.config",
@@ -314,11 +405,12 @@
               "RelativeToolTip": "DAO\\packages.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-12-28T01:08:24.723Z"
+              "WhenOpened": "2024-12-28T01:08:24.723Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GiaoDienThuNgan.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNgan.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThuNgan.cs",
@@ -330,32 +422,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 9,
               "Title": "GiaoDienThuNganDatMon.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThuNganDatMon.cs",
               "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.cs",
               "RelativeToolTip": "GUI\\GiaoDienThuNganDatMon.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAqwPAAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAiwHwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T07:39:37.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "SanPhamDAO.cs",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\SanPhamDAO.cs",
-              "RelativeDocumentMoniker": "DAO\\SanPhamDAO.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\SanPhamDAO.cs",
-              "RelativeToolTip": "DAO\\SanPhamDAO.cs",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAANoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T16:07:24.522Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "ChiTietHoaDonBus.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\ChiTietHoaDonBus.cs",
               "RelativeDocumentMoniker": "BUS\\ChiTietHoaDonBus.cs",
@@ -367,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "HoaDonBus.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\HoaDonBus.cs",
               "RelativeDocumentMoniker": "BUS\\HoaDonBus.cs",
@@ -379,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "BanCafeBus.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\BanCafeBus.cs",
               "RelativeDocumentMoniker": "BUS\\BanCafeBus.cs",
@@ -391,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "ChiTietHoaDonDAO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\ChiTietHoaDonDAO.cs",
               "RelativeDocumentMoniker": "DAO\\ChiTietHoaDonDAO.cs",
@@ -403,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "BanCafeDAO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\BanCafeDAO.cs",
               "RelativeDocumentMoniker": "DAO\\BanCafeDAO.cs",
@@ -415,7 +495,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "GiaoDienThuNgan.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNgan.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThuNgan.cs",
@@ -428,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 28,
               "Title": "GiaoDienAdmin.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdmin.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienAdmin.cs",
@@ -441,7 +521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "GiaoDienThongKe.Designer.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThongKe.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThongKe.Designer.cs",
@@ -454,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "GiaoDienThongKe.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThongKe.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThongKe.cs",
@@ -467,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GiaoDienThongKe.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThongKe.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThongKe.cs",
@@ -479,32 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GiaoDienAdmin.cs [Design]",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdmin.cs",
-              "RelativeDocumentMoniker": "GUI\\GiaoDienAdmin.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdmin.cs [Design]",
-              "RelativeToolTip": "GUI\\GiaoDienAdmin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:04:56.693Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "GiaoDienAdminThemSP.cs",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs",
-              "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemSP.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs",
-              "RelativeToolTip": "GUI\\GiaoDienAdminThemSP.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAcwEwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T17:46:22.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "packages.config",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\packages.config",
               "RelativeDocumentMoniker": "GUI\\packages.config",
@@ -517,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "GiaoDienAdminThemSP.Designer.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemSP.Designer.cs",
@@ -530,68 +585,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 18,
               "Title": "DanhMucBus.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\DanhMucBus.cs",
               "RelativeDocumentMoniker": "BUS\\DanhMucBus.cs",
               "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\DanhMucBus.cs",
               "RelativeToolTip": "BUS\\DanhMucBus.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCIAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAqwFUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T16:13:11.626Z"
+              "WhenOpened": "2024-12-23T16:13:11.626Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 17,
               "Title": "DanhMucDAO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\DanhMucDAO.cs",
               "RelativeDocumentMoniker": "DAO\\DanhMucDAO.cs",
               "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\DanhMucDAO.cs",
               "RelativeToolTip": "DAO\\DanhMucDAO.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAqwJoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAqwIgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T16:10:26.767Z"
+              "WhenOpened": "2024-12-23T16:10:26.767Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "SanPhamBus.cs",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\SanPhamBus.cs",
-              "RelativeDocumentMoniker": "BUS\\SanPhamBus.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\SanPhamBus.cs",
-              "RelativeToolTip": "BUS\\SanPhamBus.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAmwG4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T16:07:48.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 15,
               "Title": "GiaoDienAdminThemNguoiDung.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemNguoiDung.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemNguoiDung.cs",
               "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemNguoiDung.cs",
               "RelativeToolTip": "GUI\\GiaoDienAdminThemNguoiDung.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAIAwwHEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-21T16:21:27.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GiaoDienAdminThemSP.cs [Design]",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs",
-              "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemSP.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemSP.cs [Design]",
-              "RelativeToolTip": "GUI\\GiaoDienAdminThemSP.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T14:11:04.94Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "GiaoDienAdmin.Designer.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdmin.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienAdmin.Designer.cs",
@@ -604,7 +637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "KhachHangDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\KhachHangDTO.cs",
               "RelativeDocumentMoniker": "DTO\\KhachHangDTO.cs",
@@ -617,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 23,
               "Title": "ChiTietHoaDonDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\ChiTietHoaDonDTO.cs",
               "RelativeDocumentMoniker": "DTO\\ChiTietHoaDonDTO.cs",
@@ -625,11 +658,12 @@
               "RelativeToolTip": "DTO\\ChiTietHoaDonDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T17:31:56.617Z"
+              "WhenOpened": "2024-12-19T17:31:56.617Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "HoaDonDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\HoaDonDTO.cs",
               "RelativeDocumentMoniker": "DTO\\HoaDonDTO.cs",
@@ -637,12 +671,11 @@
               "RelativeToolTip": "DTO\\HoaDonDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T17:30:19.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T17:30:19.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 22,
               "Title": "BanCafeDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\BanCafeDTO.cs",
               "RelativeDocumentMoniker": "DTO\\BanCafeDTO.cs",
@@ -650,11 +683,12 @@
               "RelativeToolTip": "DTO\\BanCafeDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T17:29:39.918Z"
+              "WhenOpened": "2024-12-19T17:29:39.918Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 8,
               "Title": "SanPhamDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\SanPhamDTO.cs",
               "RelativeDocumentMoniker": "DTO\\SanPhamDTO.cs",
@@ -662,11 +696,12 @@
               "RelativeToolTip": "DTO\\SanPhamDTO.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T17:21:49.296Z"
+              "WhenOpened": "2024-12-19T17:21:49.296Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 21,
               "Title": "DanhMucDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\DanhMucDTO.cs",
               "RelativeDocumentMoniker": "DTO\\DanhMucDTO.cs",
@@ -674,36 +709,24 @@
               "RelativeToolTip": "DTO\\DanhMucDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T17:18:21.782Z"
+              "WhenOpened": "2024-12-19T17:18:21.782Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GiaoDienThuNganDatMon.cs [Design]",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.cs",
-              "RelativeDocumentMoniker": "GUI\\GiaoDienThuNganDatMon.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.cs [Design]",
-              "RelativeToolTip": "GUI\\GiaoDienThuNganDatMon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T07:03:53.066Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "TaiKhoanDAO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\TaiKhoanDAO.cs",
               "RelativeDocumentMoniker": "DAO\\TaiKhoanDAO.cs",
               "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\TaiKhoanDAO.cs",
               "RelativeToolTip": "DAO\\TaiKhoanDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAAAALsAAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T16:59:43.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T16:59:43.415Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "GiaoDienThuNganNguoiDung.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganNguoiDung.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThuNganNguoiDung.cs",
@@ -715,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "GiaoDienThuNganDatMon.Designer.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienThuNganDatMon.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienThuNganDatMon.Designer.cs",
@@ -728,20 +751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Form1.cs",
-              "RelativeDocumentMoniker": "GUI\\Form1.cs",
-              "ToolTip": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Form1.cs",
-              "RelativeToolTip": "GUI\\Form1.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAUwDIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T08:41:46.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 31,
               "Title": "DatabaseConnection.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DAO\\DatabaseConnection.cs",
               "RelativeDocumentMoniker": "DAO\\DatabaseConnection.cs",
@@ -753,7 +763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "TaiKhoanBus.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\BUS\\TaiKhoanBus.cs",
               "RelativeDocumentMoniker": "BUS\\TaiKhoanBus.cs",
@@ -777,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 14,
               "Title": "TaiKhoanDTO.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\DTO\\TaiKhoanDTO.cs",
               "RelativeDocumentMoniker": "DTO\\TaiKhoanDTO.cs",
@@ -785,11 +795,12 @@
               "RelativeToolTip": "DTO\\TaiKhoanDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T15:38:40.921Z"
+              "WhenOpened": "2024-12-15T15:38:40.921Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "GiaoDienDangki.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienDangki.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienDangki.cs",
@@ -840,7 +851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "GiaoDienAdminThemNguoiDung.cs [Design]",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\GiaoDienAdminThemNguoiDung.cs",
               "RelativeDocumentMoniker": "GUI\\GiaoDienAdminThemNguoiDung.cs",
@@ -901,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "D:\\FileWinform\\QuanLyCafeProject\\GUI\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "GUI\\Properties\\AssemblyInfo.cs",
@@ -910,10 +921,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T16:58:51.349Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             }
           ]
         }

@@ -59,15 +59,11 @@ namespace DAO
             {
                 conn.OpenConnection(); // Mở kết nối đến CSDL
 
-                string queryGetMaxId = "SELECT MAX(id_SanPham) FROM SanPham";
-                SqlCommand commandGetMaxId = new SqlCommand(queryGetMaxId, conn.GetConnection());
-                int newId = Convert.ToInt32(commandGetMaxId.ExecuteScalar()) + 1;
-
                 string queryInsertSanPham = "INSERT INTO SanPham (id_SanPham, TenSanPham, giaMua, SoLuongTon, TrangThai, id_DanhMuc) " +
                                         "VALUES (@id_SanPham, @TenSanPham, @giaMua, @SoLuongTon, @TrangThai, @id_DanhMuc)";
 
                 SqlCommand commandInsertSanPham = new SqlCommand(queryInsertSanPham, conn.GetConnection());
-                commandInsertSanPham.Parameters.AddWithValue("@id_SanPham", newId);
+                commandInsertSanPham.Parameters.AddWithValue("@id_SanPham", sanPham.Id_SanPham);
                 commandInsertSanPham.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
                 commandInsertSanPham.Parameters.AddWithValue("@giaMua", sanPham.GiaMua);
                 commandInsertSanPham.Parameters.AddWithValue("@SoLuongTon", sanPham.SoLuongTon);
@@ -138,6 +134,11 @@ namespace DAO
         {
             try
             {
+                if (idSanPham <= 0)
+                {
+                    throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                }
+
                 conn.OpenConnection();
                 string query = "DELETE FROM SanPham WHERE id_SanPham = @Id";
                 SqlCommand command = new SqlCommand(query, conn.GetConnection());
@@ -239,6 +240,29 @@ namespace DAO
                 throw new Exception("Lỗi khi truy vấn sản phẩm theo ID danh mục: " + ex.Message);
             }
         }
-     }
+
+        public bool UpdateSoLuongTon(int idSanPham, int soLuongMoi)
+        {
+            try
+            {
+                conn.OpenConnection();
+                string query = "UPDATE SanPham SET SoLuongTon = @SoLuongMoi WHERE id_SanPham = @Id";
+                SqlCommand command = new SqlCommand(query, conn.GetConnection());
+                command.Parameters.AddWithValue("@SoLuongMoi", soLuongMoi);
+                command.Parameters.AddWithValue("@Id", idSanPham);
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật số lượng tồn: " + ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
+
+    }
 }
 
