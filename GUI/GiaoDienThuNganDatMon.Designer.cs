@@ -500,6 +500,7 @@
             this.CasherSearchPrd.TabIndex = 11;
             this.CasherSearchPrd.Text = "Tìm";
             this.CasherSearchPrd.UseVisualStyleBackColor = true;
+            this.CasherSearchPrd.Click += new System.EventHandler(this.CasherSearchPrd_Click);
             // 
             // menuStrip1
             // 

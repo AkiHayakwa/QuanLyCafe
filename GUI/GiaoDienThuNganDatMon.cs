@@ -366,7 +366,10 @@ namespace GUI
 
         private void Cashierbtnpayment_Click(object sender, EventArgs e)
         {
-      
+            int maHoaDon = int.Parse(CashierInvoiceId.Text);
+            float tongTien = float.Parse(CashierInvoice.Text);
+            GiaoDienThanhToan thanhToan = new GiaoDienThanhToan(maHoaDon , tongTien);
+            thanhToan.ShowDialog();
         }
 
         private void dgv_Order_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -467,5 +470,23 @@ namespace GUI
             GiaoDienChuyenDoiBan formChuyenDoiBan = new GiaoDienChuyenDoiBan();
             formChuyenDoiBan.Show();
         }
-    } 
+
+        private void CasherSearchPrd_Click(object sender, EventArgs e)
+        {
+            string tenSanPham = CashierNamePrd.Text.Trim(); 
+            if (!string.IsNullOrEmpty(tenSanPham)) {
+                List<SanPhamDTO> products = productBUS.GetAllSanPham(); 
+                var filteredProducts = products.Where(p => p.TenSanPham.Contains(tenSanPham)).ToList();
+                if (filteredProducts.Count > 0) { 
+                    dgv_Prd.DataSource = filteredProducts; 
+                } else { 
+                    MessageBox.Show("Không tìm thấy sản phẩm nào.", "Thông báo");
+                    dgv_Prd.DataSource = null;
+                } 
+            } else {
+                MessageBox.Show("Vui lòng nhập tên sản phẩm.", "Thông báo"); 
+            }
+        }
+
+     } 
  }

@@ -38,8 +38,6 @@
             this.textBoxInvoiceId2 = new System.Windows.Forms.TextBox();
             this.dgv_Order1 = new System.Windows.Forms.DataGridView();
             this.dgv_Order2 = new System.Windows.Forms.DataGridView();
-            this.btnswitchallleft = new System.Windows.Forms.Button();
-            this.btnswitchleft = new System.Windows.Forms.Button();
             this.btnswitchright = new System.Windows.Forms.Button();
             this.btnswitchallright = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Order1)).BeginInit();
@@ -137,30 +135,10 @@
             this.dgv_Order2.Size = new System.Drawing.Size(460, 347);
             this.dgv_Order2.TabIndex = 9;
             // 
-            // btnswitchallleft
-            // 
-            this.btnswitchallleft.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnswitchallleft.Location = new System.Drawing.Point(495, 448);
-            this.btnswitchallleft.Name = "btnswitchallleft";
-            this.btnswitchallleft.Size = new System.Drawing.Size(99, 36);
-            this.btnswitchallleft.TabIndex = 17;
-            this.btnswitchallleft.Text = "<<";
-            this.btnswitchallleft.UseVisualStyleBackColor = true;
-            // 
-            // btnswitchleft
-            // 
-            this.btnswitchleft.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnswitchleft.Location = new System.Drawing.Point(495, 390);
-            this.btnswitchleft.Name = "btnswitchleft";
-            this.btnswitchleft.Size = new System.Drawing.Size(99, 36);
-            this.btnswitchleft.TabIndex = 16;
-            this.btnswitchleft.Text = "<";
-            this.btnswitchleft.UseVisualStyleBackColor = true;
-            // 
             // btnswitchright
             // 
             this.btnswitchright.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnswitchright.Location = new System.Drawing.Point(495, 137);
+            this.btnswitchright.Location = new System.Drawing.Point(495, 245);
             this.btnswitchright.Name = "btnswitchright";
             this.btnswitchright.Size = new System.Drawing.Size(99, 36);
             this.btnswitchright.TabIndex = 14;
@@ -171,12 +149,13 @@
             // btnswitchallright
             // 
             this.btnswitchallright.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnswitchallright.Location = new System.Drawing.Point(495, 203);
+            this.btnswitchallright.Location = new System.Drawing.Point(495, 307);
             this.btnswitchallright.Name = "btnswitchallright";
             this.btnswitchallright.Size = new System.Drawing.Size(99, 36);
             this.btnswitchallright.TabIndex = 15;
             this.btnswitchallright.Text = ">>";
             this.btnswitchallright.UseVisualStyleBackColor = true;
+            this.btnswitchallright.Click += new System.EventHandler(this.btnswitchallright_Click);
             // 
             // GiaoDienChuyenDoiBan
             // 
@@ -184,8 +163,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 496);
-            this.Controls.Add(this.btnswitchallleft);
-            this.Controls.Add(this.btnswitchleft);
             this.Controls.Add(this.btnswitchallright);
             this.Controls.Add(this.btnswitchright);
             this.Controls.Add(this.dgv_Order2);
@@ -220,8 +197,6 @@
         private System.Windows.Forms.TextBox textBoxInvoiceId2;
         private System.Windows.Forms.DataGridView dgv_Order1;
         private System.Windows.Forms.DataGridView dgv_Order2;
-        private System.Windows.Forms.Button btnswitchallleft;
-        private System.Windows.Forms.Button btnswitchleft;
         private System.Windows.Forms.Button btnswitchright;
         private System.Windows.Forms.Button btnswitchallright;
     }

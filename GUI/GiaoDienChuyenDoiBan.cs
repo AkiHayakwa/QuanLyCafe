@@ -137,5 +137,57 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn một dòng trong bảng để chuyển!");
             }
         }
+
+        private void btnswitchallright_Click(object sender, EventArgs e)
+        {
+            if (dgv_Order1.Rows.Count > 0)
+            {
+                // Kiểm tra số lượng cột của cả hai DataGridView để đảm bảo chúng khớp nhau
+                if (dgv_Order1.Columns.Count != dgv_Order2.Columns.Count)
+                {
+                    MessageBox.Show("Số lượng cột không khớp giữa hai bảng.");
+                    return;
+                }
+
+                List<DataGridViewRow> rowsToTransfer = new List<DataGridViewRow>();
+
+                // Sao chép tất cả các hàng từ dgv_Order1 sang rowsToTransfer
+                foreach (DataGridViewRow row in dgv_Order1.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        DataGridViewRow newRow = new DataGridViewRow();
+                        newRow.CreateCells(dgv_Order2);
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            newRow.Cells[i].Value = row.Cells[i].Value;
+                        }
+                        rowsToTransfer.Add(newRow);
+                    }
+                }
+
+                // Thêm tất cả các hàng đã sao chép vào dgv_Order2 và xóa chúng khỏi dgv_Order1
+                dgv_Order2.Rows.AddRange(rowsToTransfer.ToArray());
+                dgv_Order1.Rows.Clear();
+
+                // Cập nhật bàn của hóa đơn và lưu vào cơ sở dữ liệu
+                int idHoaDon = int.Parse(textBoxInvoiceId.Text);
+                var hoaDon = hoaDonBus.LayHoaDonTheoBan(idHoaDon);
+                if (hoaDon != null)
+                {
+                    var selectedBanChuaCoOrder = ComboBoxTable2.SelectedItem.ToString().Split(' ')[1];
+                    hoaDon.IdBan = Convert.ToInt32(selectedBanChuaCoOrder);
+                    hoaDonBus.UpdateBanChoHoaDon(hoaDon);
+                    MessageBox.Show("Chuyển tất cả các hàng thành công!");
+                    LoadComboboxBanDaCoOrder();
+                    LoadComboboxBanChuaCoOrder();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có hàng nào để chuyển!");
+            }
+        }
+
     }
 }

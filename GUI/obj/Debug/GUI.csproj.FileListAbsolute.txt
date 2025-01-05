@@ -315,3 +315,4 @@ D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienAdminThemSP.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThongKe.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienChuyenDoiBan.resources
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\Guna.UI2.dll
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThanhToan.resources
