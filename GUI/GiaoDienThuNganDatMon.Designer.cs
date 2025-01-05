@@ -54,7 +54,6 @@
             this.Cashierbtnpayment = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelTime = new System.Windows.Forms.Label();
-            this.btnBill = new System.Windows.Forms.Button();
             this.CashierInvoice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -110,10 +109,12 @@
             // CashierTable1
             // 
             this.CashierTable1.BackColor = System.Drawing.Color.White;
+            this.CashierTable1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.CashierTable1.Location = new System.Drawing.Point(6, 33);
             this.CashierTable1.Name = "CashierTable1";
             this.CashierTable1.Size = new System.Drawing.Size(84, 78);
             this.CashierTable1.TabIndex = 0;
+            this.CashierTable1.Tag = "1";
             this.CashierTable1.Text = "Bàn 1";
             this.CashierTable1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.CashierTable1.UseVisualStyleBackColor = false;
@@ -125,6 +126,7 @@
             this.CashierTable16.Name = "CashierTable16";
             this.CashierTable16.Size = new System.Drawing.Size(84, 78);
             this.CashierTable16.TabIndex = 18;
+            this.CashierTable16.Tag = "16";
             this.CashierTable16.Text = "Bàn 16";
             this.CashierTable16.UseVisualStyleBackColor = true;
             this.CashierTable16.Click += new System.EventHandler(this.Button_Click);
@@ -135,6 +137,7 @@
             this.CashierTable15.Name = "CashierTable15";
             this.CashierTable15.Size = new System.Drawing.Size(84, 78);
             this.CashierTable15.TabIndex = 17;
+            this.CashierTable15.Tag = "15";
             this.CashierTable15.Text = "Bàn 15";
             this.CashierTable15.UseVisualStyleBackColor = true;
             this.CashierTable15.Click += new System.EventHandler(this.Button_Click);
@@ -145,6 +148,7 @@
             this.CashierTable14.Name = "CashierTable14";
             this.CashierTable14.Size = new System.Drawing.Size(84, 78);
             this.CashierTable14.TabIndex = 16;
+            this.CashierTable14.Tag = "14";
             this.CashierTable14.Text = "Bàn 14";
             this.CashierTable14.UseVisualStyleBackColor = true;
             this.CashierTable14.Click += new System.EventHandler(this.Button_Click);
@@ -155,6 +159,7 @@
             this.CashierTable13.Name = "CashierTable13";
             this.CashierTable13.Size = new System.Drawing.Size(84, 78);
             this.CashierTable13.TabIndex = 15;
+            this.CashierTable13.Tag = "13";
             this.CashierTable13.Text = "Bàn 13";
             this.CashierTable13.UseVisualStyleBackColor = true;
             this.CashierTable13.Click += new System.EventHandler(this.Button_Click);
@@ -165,6 +170,7 @@
             this.CashierTable12.Name = "CashierTable12";
             this.CashierTable12.Size = new System.Drawing.Size(84, 78);
             this.CashierTable12.TabIndex = 13;
+            this.CashierTable12.Tag = "12";
             this.CashierTable12.Text = "Bàn 12";
             this.CashierTable12.UseVisualStyleBackColor = true;
             this.CashierTable12.Click += new System.EventHandler(this.Button_Click);
@@ -175,6 +181,7 @@
             this.CashierTable11.Name = "CashierTable11";
             this.CashierTable11.Size = new System.Drawing.Size(84, 78);
             this.CashierTable11.TabIndex = 12;
+            this.CashierTable11.Tag = "11";
             this.CashierTable11.Text = "Bàn 11";
             this.CashierTable11.UseVisualStyleBackColor = true;
             this.CashierTable11.Click += new System.EventHandler(this.Button_Click);
@@ -185,6 +192,7 @@
             this.CashierTable10.Name = "CashierTable10";
             this.CashierTable10.Size = new System.Drawing.Size(84, 78);
             this.CashierTable10.TabIndex = 11;
+            this.CashierTable10.Tag = "10";
             this.CashierTable10.Text = "Bàn 10";
             this.CashierTable10.UseVisualStyleBackColor = true;
             this.CashierTable10.Click += new System.EventHandler(this.Button_Click);
@@ -195,6 +203,7 @@
             this.CashierTable9.Name = "CashierTable9";
             this.CashierTable9.Size = new System.Drawing.Size(84, 78);
             this.CashierTable9.TabIndex = 10;
+            this.CashierTable9.Tag = "9";
             this.CashierTable9.Text = "Bàn 9";
             this.CashierTable9.UseVisualStyleBackColor = true;
             this.CashierTable9.Click += new System.EventHandler(this.Button_Click);
@@ -205,6 +214,7 @@
             this.CashierTable8.Name = "CashierTable8";
             this.CashierTable8.Size = new System.Drawing.Size(84, 78);
             this.CashierTable8.TabIndex = 8;
+            this.CashierTable8.Tag = "8";
             this.CashierTable8.Text = "Bàn 8";
             this.CashierTable8.UseVisualStyleBackColor = true;
             this.CashierTable8.Click += new System.EventHandler(this.Button_Click);
@@ -215,6 +225,7 @@
             this.CashierTable7.Name = "CashierTable7";
             this.CashierTable7.Size = new System.Drawing.Size(84, 78);
             this.CashierTable7.TabIndex = 7;
+            this.CashierTable7.Tag = "7";
             this.CashierTable7.Text = "Bàn 7";
             this.CashierTable7.UseVisualStyleBackColor = true;
             this.CashierTable7.Click += new System.EventHandler(this.Button_Click);
@@ -225,6 +236,7 @@
             this.CashierTable6.Name = "CashierTable6";
             this.CashierTable6.Size = new System.Drawing.Size(84, 78);
             this.CashierTable6.TabIndex = 6;
+            this.CashierTable6.Tag = "6";
             this.CashierTable6.Text = "Bàn 6";
             this.CashierTable6.UseVisualStyleBackColor = true;
             this.CashierTable6.Click += new System.EventHandler(this.Button_Click);
@@ -235,6 +247,7 @@
             this.CashierTable5.Name = "CashierTable5";
             this.CashierTable5.Size = new System.Drawing.Size(84, 78);
             this.CashierTable5.TabIndex = 5;
+            this.CashierTable5.Tag = "5";
             this.CashierTable5.Text = "Bàn 5";
             this.CashierTable5.UseVisualStyleBackColor = true;
             this.CashierTable5.Click += new System.EventHandler(this.Button_Click);
@@ -245,6 +258,7 @@
             this.CashierTable4.Name = "CashierTable4";
             this.CashierTable4.Size = new System.Drawing.Size(84, 78);
             this.CashierTable4.TabIndex = 3;
+            this.CashierTable4.Tag = "4";
             this.CashierTable4.Text = "Bàn 4";
             this.CashierTable4.UseVisualStyleBackColor = true;
             this.CashierTable4.Click += new System.EventHandler(this.Button_Click);
@@ -255,6 +269,7 @@
             this.CashierTable3.Name = "CashierTable3";
             this.CashierTable3.Size = new System.Drawing.Size(84, 78);
             this.CashierTable3.TabIndex = 2;
+            this.CashierTable3.Tag = "3";
             this.CashierTable3.Text = "Bàn 3";
             this.CashierTable3.UseVisualStyleBackColor = true;
             this.CashierTable3.Click += new System.EventHandler(this.Button_Click);
@@ -265,6 +280,7 @@
             this.CashierTable2.Name = "CashierTable2";
             this.CashierTable2.Size = new System.Drawing.Size(84, 78);
             this.CashierTable2.TabIndex = 1;
+            this.CashierTable2.Tag = "2";
             this.CashierTable2.Text = "Bàn 2";
             this.CashierTable2.UseVisualStyleBackColor = true;
             this.CashierTable2.Click += new System.EventHandler(this.Button_Click);
@@ -304,9 +320,9 @@
             this.Cashierbtnpayment.BackColor = System.Drawing.Color.Blue;
             this.Cashierbtnpayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cashierbtnpayment.ForeColor = System.Drawing.Color.White;
-            this.Cashierbtnpayment.Location = new System.Drawing.Point(467, 186);
+            this.Cashierbtnpayment.Location = new System.Drawing.Point(538, 170);
             this.Cashierbtnpayment.Name = "Cashierbtnpayment";
-            this.Cashierbtnpayment.Size = new System.Drawing.Size(196, 25);
+            this.Cashierbtnpayment.Size = new System.Drawing.Size(196, 41);
             this.Cashierbtnpayment.TabIndex = 10;
             this.Cashierbtnpayment.Text = "Thanh toán";
             this.Cashierbtnpayment.UseVisualStyleBackColor = false;
@@ -328,18 +344,6 @@
             this.labelTime.TabIndex = 14;
             this.labelTime.Text = "labelThoiGian";
             this.labelTime.Click += new System.EventHandler(this.label_ThoiGian_Click);
-            // 
-            // btnBill
-            // 
-            this.btnBill.BackColor = System.Drawing.Color.Blue;
-            this.btnBill.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBill.ForeColor = System.Drawing.Color.White;
-            this.btnBill.Location = new System.Drawing.Point(672, 186);
-            this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(196, 25);
-            this.btnBill.TabIndex = 15;
-            this.btnBill.Text = "Xuất bill";
-            this.btnBill.UseVisualStyleBackColor = false;
             // 
             // CashierInvoice
             // 
@@ -390,6 +394,7 @@
             this.dgv_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Order.Location = new System.Drawing.Point(6, 24);
             this.dgv_Order.Name = "dgv_Order";
+            this.dgv_Order.RowHeadersVisible = false;
             this.dgv_Order.Size = new System.Drawing.Size(406, 437);
             this.dgv_Order.TabIndex = 0;
             this.dgv_Order.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Order_CellClick);
@@ -431,8 +436,8 @@
             this.CashierCategory.FormattingEnabled = true;
             this.CashierCategory.Items.AddRange(new object[] {
             "Bánh Ngọt",
-            "Trà Sữa ",
-            "Sinh Tố",
+            "Trà sữa ",
+            "Sinh tố",
             "Cafe"});
             this.CashierCategory.Location = new System.Drawing.Point(119, 33);
             this.CashierCategory.Name = "CashierCategory";
@@ -506,6 +511,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1277, 29);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // chuyểnĐổiToolStripMenuItem
             // 
@@ -514,6 +520,7 @@
             this.chuyểnĐổiToolStripMenuItem.Name = "chuyểnĐổiToolStripMenuItem";
             this.chuyểnĐổiToolStripMenuItem.Size = new System.Drawing.Size(133, 25);
             this.chuyểnĐổiToolStripMenuItem.Text = "Chuyển - Đổi ";
+            this.chuyểnĐổiToolStripMenuItem.Click += new System.EventHandler(this.chuyểnĐổiToolStripMenuItem_Click);
             // 
             // làmMớiToolStripMenuItem
             // 
@@ -529,7 +536,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.CashierInvoice);
             this.Controls.Add(this.CashierTableNumber);
-            this.Controls.Add(this.btnBill);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.CashierInvoiceId);
             this.Controls.Add(this.Cashierbtnpayment);
@@ -583,7 +589,6 @@
         private System.Windows.Forms.Button CashierTable16;
         private System.Windows.Forms.Button CashierTable15;
         private System.Windows.Forms.Button CashierTable14;
-        private System.Windows.Forms.Button btnBill;
         private System.Windows.Forms.TextBox CashierInvoice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

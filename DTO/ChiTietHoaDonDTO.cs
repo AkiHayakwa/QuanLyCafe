@@ -14,15 +14,17 @@ namespace DTO
         public int SoLuong { get; set; }
         public float GiaBan { get; set; }
 
+        public float TongTien { get; set; }
+
         public ChiTietHoaDonDTO() { }
 
-        public ChiTietHoaDonDTO(int id, int idHoaDon, int idSanPham, int soLuong, float giaBan)
+        public ChiTietHoaDonDTO( int idHoaDon, int idSanPham, int soLuong, float giaBan, float tongTien)
         {
-            Id = id;
             IdHoaDon = idHoaDon;
             IdSanPham = idSanPham;
             SoLuong = soLuong;
             GiaBan = giaBan;
+            TongTien = tongTien;
         }
     }
 }

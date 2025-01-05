@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Data;
 using DTO;
 
 namespace DAO
@@ -24,22 +23,25 @@ namespace DAO
             {
                 conn.OpenConnection();
                 string query = "SELECT * FROM SanPham";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
                 {
-                    SanPhamDTO sanPham = new SanPhamDTO(
-                        Convert.ToInt32(reader["id_SanPham"]),
-                        reader["TenSanPham"].ToString(),
-                        Convert.ToDecimal(reader["giaMua"]),
-                        Convert.ToInt32(reader["SoLuongTon"]),
-                        reader["TrangThai"].ToString(),
-                        Convert.ToInt32(reader["id_DanhMuc"])
-                    );
-                    sanPhamList.Add(sanPham);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            SanPhamDTO sanPham = new SanPhamDTO(
+                            Convert.ToInt32(reader["id_SanPham"]),
+                            reader["TenSanPham"].ToString(),
+                            Convert.ToSingle(reader["giaMua"]), // Sửa lại để chuyển đổi thành float
+                            Convert.ToInt32(reader["SoLuongTon"]),
+                            reader["TrangThai"].ToString(),
+                            Convert.ToInt32(reader["id_DanhMuc"])
+                             );
+                            sanPhamList.Add(sanPham);
+
+                        }
+                    }
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
@@ -57,32 +59,30 @@ namespace DAO
         {
             try
             {
-                conn.OpenConnection(); // Mở kết nối đến CSDL
+                conn.OpenConnection();
+                string query = "INSERT INTO SanPham (id_SanPham, TenSanPham, giaMua, SoLuongTon, TrangThai, id_DanhMuc) " +
+                               "VALUES (@id_SanPham, @TenSanPham, @giaMua, @SoLuongTon, @TrangThai, @id_DanhMuc)";
 
-                string queryInsertSanPham = "INSERT INTO SanPham (id_SanPham, TenSanPham, giaMua, SoLuongTon, TrangThai, id_DanhMuc) " +
-                                        "VALUES (@id_SanPham, @TenSanPham, @giaMua, @SoLuongTon, @TrangThai, @id_DanhMuc)";
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@id_SanPham", sanPham.Id_SanPham);
+                    command.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
+                    command.Parameters.AddWithValue("@giaMua", sanPham.GiaMua);
+                    command.Parameters.AddWithValue("@SoLuongTon", sanPham.SoLuongTon);
+                    command.Parameters.AddWithValue("@TrangThai", sanPham.TrangThai);
+                    command.Parameters.AddWithValue("@id_DanhMuc", sanPham.Id_DanhMuc);
 
-                SqlCommand commandInsertSanPham = new SqlCommand(queryInsertSanPham, conn.GetConnection());
-                commandInsertSanPham.Parameters.AddWithValue("@id_SanPham", sanPham.Id_SanPham);
-                commandInsertSanPham.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
-                commandInsertSanPham.Parameters.AddWithValue("@giaMua", sanPham.GiaMua);
-                commandInsertSanPham.Parameters.AddWithValue("@SoLuongTon", sanPham.SoLuongTon);
-                commandInsertSanPham.Parameters.AddWithValue("@TrangThai", sanPham.TrangThai);
-                commandInsertSanPham.Parameters.AddWithValue("@id_DanhMuc", sanPham.Id_DanhMuc);
-
-                int rowsAffected = commandInsertSanPham.ExecuteNonQuery();
-
-                // Nếu có ít nhất 1 dòng bị ảnh hưởng thì trả về true
-                return rowsAffected > 0;
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi thêm sản phẩm: " + ex.Message);
-                return false;
+                throw new Exception("Lỗi khi thêm sản phẩm: " + ex.Message);
             }
             finally
             {
-                conn.CloseConnection(); // Đảm bảo đóng kết nối
+                conn.CloseConnection();
             }
         }
 
@@ -91,43 +91,32 @@ namespace DAO
         {
             try
             {
-                // Mở kết nối với cơ sở dữ liệu
                 conn.OpenConnection();
-
-                // Cập nhật câu lệnh SQL
                 string query = "UPDATE SanPham SET TenSanPham = @TenSanPham, giaMua = @GiaMua, SoLuongTon = @SoLuongTon, " +
                                "TrangThai = @TrangThai, id_DanhMuc = @Id_DanhMuc WHERE id_SanPham = @Id_SanPham";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
 
-                // Thêm các tham số vào câu lệnh SQL
-                command.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
-                command.Parameters.AddWithValue("@GiaMua", sanPham.GiaMua);
-                command.Parameters.AddWithValue("@SoLuongTon", sanPham.SoLuongTon);
-                command.Parameters.AddWithValue("@TrangThai", sanPham.TrangThai);
-                command.Parameters.AddWithValue("@Id_DanhMuc", sanPham.Id_DanhMuc);
-                command.Parameters.AddWithValue("@Id_SanPham", sanPham.Id_SanPham);
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@TenSanPham", sanPham.TenSanPham);
+                    command.Parameters.AddWithValue("@GiaMua", sanPham.GiaMua);
+                    command.Parameters.AddWithValue("@SoLuongTon", sanPham.SoLuongTon);
+                    command.Parameters.AddWithValue("@TrangThai", sanPham.TrangThai);
+                    command.Parameters.AddWithValue("@Id_DanhMuc", sanPham.Id_DanhMuc);
+                    command.Parameters.AddWithValue("@Id_SanPham", sanPham.Id_SanPham);
 
-                // Thực thi câu lệnh SQL
-                int result = command.ExecuteNonQuery();
-
-                // Kiểm tra xem có dòng nào bị ảnh hưởng không
-                return result > 0;
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
+                throw new Exception("Lỗi khi cập nhật sản phẩm: " + ex.Message);
             }
             finally
             {
-                // Đảm bảo đóng kết nối
                 conn.CloseConnection();
             }
         }
-
-
-
-
-
 
         // Xóa sản phẩm
         public bool DeleteSanPham(int idSanPham)
@@ -141,11 +130,13 @@ namespace DAO
 
                 conn.OpenConnection();
                 string query = "DELETE FROM SanPham WHERE id_SanPham = @Id";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
-                command.Parameters.AddWithValue("@Id", idSanPham);
 
-                int result = command.ExecuteNonQuery();
-                return result > 0;
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@Id", idSanPham);
+                    int result = command.ExecuteNonQuery();
+                    return result > 0;
+                }
             }
             catch (Exception ex)
             {
@@ -165,22 +156,26 @@ namespace DAO
             {
                 conn.OpenConnection();
                 string query = "SELECT * FROM SanPham WHERE id_SanPham = @Id";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
-                command.Parameters.AddWithValue("@Id", idSanPham);
-                SqlDataReader reader = command.ExecuteReader();
 
-                if (reader.Read())
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
                 {
-                    sanPham = new SanPhamDTO(
-                        Convert.ToInt32(reader["id_SanPham"]),
-                        reader["TenSanPham"].ToString(),
-                        Convert.ToDecimal(reader["giaMua"]),
-                        Convert.ToInt32(reader["SoLuongTon"]),
-                        reader["TrangThai"].ToString(),
-                        Convert.ToInt32(reader["id_DanhMuc"])
-                    );
+                    command.Parameters.AddWithValue("@Id", idSanPham);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            sanPham = new SanPhamDTO(
+                                Convert.ToInt32(reader["id_SanPham"]),
+                                reader["TenSanPham"].ToString(),
+                                Convert.ToSingle(reader["GiaMua"]), 
+                                Convert.ToInt32(reader["SoLuongTon"]),
+                                reader["TrangThai"].ToString(),
+                                Convert.ToInt32(reader["id_DanhMuc"])
+                            );
+                        }
+                    }
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
@@ -193,65 +188,63 @@ namespace DAO
             return sanPham;
         }
 
+        // Lấy sản phẩm theo ID danh mục
         public List<SanPhamDTO> GetSanPhamByIdDanhMuc(int idDanhMuc)
         {
+            List<SanPhamDTO> sanPhamList = new List<SanPhamDTO>();
             try
             {
-                string query = "SELECT sp.id_SanPham, sp.TenSanPham, sp.giaMua, sp.SoLuongTon, sp.TrangThai " +
-                               "FROM SanPham sp " +
-                               "WHERE sp.id_DanhMuc = @IdDanhMuc";
-
-                List<SanPhamDTO> sanPhamList = new List<SanPhamDTO>();
-
-                // Mở kết nối
                 conn.OpenConnection();
+                string query = "SELECT id_SanPham, TenSanPham, giaMua, SoLuongTon, TrangThai FROM SanPham WHERE id_DanhMuc = @IdDanhMuc";
 
-                // Tạo SqlCommand để thực thi câu truy vấn
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
-
-                // Thêm tham số vào câu truy vấn
-                command.Parameters.AddWithValue("@IdDanhMuc", idDanhMuc);
-
-                // Sử dụng SqlDataAdapter để lấy dữ liệu vào DataTable
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
                 {
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                    command.Parameters.AddWithValue("@IdDanhMuc", idDanhMuc);
 
-                    // Chuyển đổi dữ liệu từ DataTable sang List<SanPhamDTO>
-                    foreach (DataRow row in dt.Rows)
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        SanPhamDTO sanPham = new SanPhamDTO
+                        while (reader.Read())
                         {
-                            Id_SanPham = Convert.ToInt32(row["id_SanPham"]),
-                            TenSanPham = row["TenSanPham"].ToString(),
-                            GiaMua = Convert.ToDecimal(row["giaMua"]),
-                            SoLuongTon = Convert.ToInt32(row["SoLuongTon"]),
-                            TrangThai = row["TrangThai"].ToString()
-                        };
-                        sanPhamList.Add(sanPham);
+                            SanPhamDTO sanPham = new SanPhamDTO
+                            {
+                                Id_SanPham = Convert.ToInt32(reader["id_SanPham"]),
+                                TenSanPham = reader["TenSanPham"].ToString(),
+                                GiaMua = Convert.ToSingle(reader["GiaMua"]),
+                                SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]),
+                                TrangThai = reader["TrangThai"].ToString()
+                            };
+                            sanPhamList.Add(sanPham);
+                        }
                     }
                 }
-
-                return sanPhamList;
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi truy vấn sản phẩm theo ID danh mục: " + ex.Message);
             }
+            finally
+            {
+                conn.CloseConnection();
+            }
+            return sanPhamList;
         }
 
+        // Cập nhật số lượng tồn kho
         public bool UpdateSoLuongTon(int idSanPham, int soLuongMoi)
         {
             try
             {
                 conn.OpenConnection();
                 string query = "UPDATE SanPham SET SoLuongTon = @SoLuongMoi WHERE id_SanPham = @Id";
-                SqlCommand command = new SqlCommand(query, conn.GetConnection());
-                command.Parameters.AddWithValue("@SoLuongMoi", soLuongMoi);
-                command.Parameters.AddWithValue("@Id", idSanPham);
-                int rowsAffected = command.ExecuteNonQuery();
-                return rowsAffected > 0;
+
+                using (SqlCommand command = new SqlCommand(query, conn.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@SoLuongMoi", soLuongMoi);
+                    command.Parameters.AddWithValue("@Id", idSanPham);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
             }
             catch (Exception ex)
             {
@@ -262,7 +255,21 @@ namespace DAO
                 conn.CloseConnection();
             }
         }
-
+        public string LayTenSanPham(int id_SanPham) {
+            string tenSanPham = null; 
+            string query = "SELECT TenSanPham FROM SanPham WHERE id_SanPham = @id_SanPham"; 
+            try { 
+                conn.OpenConnection(); 
+                SqlCommand cmd = new SqlCommand(query, conn.GetConnection()); 
+                cmd.Parameters.AddWithValue("@id_SanPham", id_SanPham); 
+                SqlDataReader reader = cmd.ExecuteReader(); 
+                if (reader.Read()) { 
+                    tenSanPham = reader.GetString(0); 
+                } 
+            } finally { 
+                conn.CloseConnection(); 
+            } 
+            return tenSanPham; 
+        }
     }
 }
-

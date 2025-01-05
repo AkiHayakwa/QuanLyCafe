@@ -42,7 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.giaoDienThuNganDatMon1 = new GUI.GiaoDienThuNganDatMon();
+            this.giaoDienThuNganDatMon3 = new GUI.GiaoDienThuNganDatMon();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,24 +220,26 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Cổng Thu Ngân";
             // 
-            // giaoDienThuNganDatMon1
+            // giaoDienThuNganDatMon3
             // 
-            this.giaoDienThuNganDatMon1.Location = new System.Drawing.Point(195, 37);
-            this.giaoDienThuNganDatMon1.Name = "giaoDienThuNganDatMon1";
-            this.giaoDienThuNganDatMon1.Size = new System.Drawing.Size(1277, 745);
-            this.giaoDienThuNganDatMon1.TabIndex = 3;
+            this.giaoDienThuNganDatMon3.Location = new System.Drawing.Point(179, 37);
+            this.giaoDienThuNganDatMon3.Name = "giaoDienThuNganDatMon3";
+            this.giaoDienThuNganDatMon3.Size = new System.Drawing.Size(1277, 745);
+            this.giaoDienThuNganDatMon3.TabIndex = 3;
+            this.giaoDienThuNganDatMon3.Load += new System.EventHandler(this.giaoDienThuNganDatMon3_Load);
             // 
             // GiaoDienThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 752);
-            this.Controls.Add(this.giaoDienThuNganDatMon1);
+            this.Controls.Add(this.giaoDienThuNganDatMon3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GiaoDienThuNgan";
             this.Text = "GiaoDienThuNgan";
+            this.Load += new System.EventHandler(this.GiaoDienThuNgan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -263,5 +265,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private GiaoDienThuNganDatMon giaoDienThuNganDatMon1;
+        private GiaoDienThuNganDatMon giaoDienThuNganDatMon2;
+        private GiaoDienThuNganDatMon giaoDienThuNganDatMon3;
     }
 }

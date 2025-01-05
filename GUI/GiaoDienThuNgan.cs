@@ -42,5 +42,20 @@ namespace GUI
         {
 
         }
+
+        private void giaoDienThuNganDatMon1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GiaoDienThuNgan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void giaoDienThuNganDatMon3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

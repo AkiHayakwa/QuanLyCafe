@@ -8,7 +8,7 @@ namespace DTO
 {
     public class BanCafeDTO
     {
-        public int IdBan { get; set; }
+        public int Id_Ban { get; set; }
         public string TenBan { get; set; }
         public string TrangThai { get; set; }
 
@@ -16,7 +16,7 @@ namespace DTO
 
         public BanCafeDTO(int idBan, string tenBan, string trangThai)
         {
-            IdBan = idBan;
+            Id_Ban = idBan;
             TenBan = tenBan;
             TrangThai = trangThai;
         }

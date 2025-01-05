@@ -106,9 +106,10 @@ namespace GUI
                 // Lấy thông tin từ các TextBox và ComboBox
                 int id_sanpham = Convert.ToInt32(AdmPrd_IdPrd.Text);
                 string tenSanPham = AdmPrd_NamePrd.Text;
-                decimal giaMua = Convert.ToDecimal(AdmPrd_Price.Text);
+                float giaMua = Convert.ToSingle(AdmPrd_Price.Text); // Sửa lại để chuyển đổi thành float
                 int soLuongTon = Convert.ToInt32(AdmPrd_Stock.Text);
                 string trangThai = AdmPrd_Status.Text;
+
 
                 // Kiểm tra danh mục đã chọn
                 var selectedDanhMuc = AdmPrd_Category.SelectedItem as DanhMucDTO;
@@ -159,11 +160,13 @@ namespace GUI
             try
             {
                 // Lấy thông tin từ các TextBox
-                int idSanPham = Convert.ToInt32(AdmPrd_IdPrd.Text);  
-                string tenSanPham = AdmPrd_NamePrd.Text;  
-                decimal giaMua = Convert.ToDecimal(AdmPrd_Price.Text); 
-                int soLuongTon = Convert.ToInt32(AdmPrd_Stock.Text);  
-                string trangThai = AdmPrd_Status.Text;  
+                // Lấy thông tin từ các TextBox và ComboBox
+                int id_sanpham = Convert.ToInt32(AdmPrd_IdPrd.Text);
+                string tenSanPham = AdmPrd_NamePrd.Text;
+                float giaMua = Convert.ToSingle(AdmPrd_Price.Text); // Sửa lại để chuyển đổi thành float
+                int soLuongTon = Convert.ToInt32(AdmPrd_Stock.Text);
+                string trangThai = AdmPrd_Status.Text;
+
 
                 var selectedDanhMuc = AdmPrd_Category.SelectedItem as DanhMucDTO;
                 if (selectedDanhMuc == null)
@@ -175,14 +178,14 @@ namespace GUI
                 int idDanhMuc = selectedDanhMuc.Id_danhMuc;
 
                 // Kiểm tra dữ liệu đầu vào
-                if (idSanPham <= 0 || string.IsNullOrEmpty(tenSanPham) || giaMua <= 0 || soLuongTon < 0)
+                if (id_sanpham <= 0 || string.IsNullOrEmpty(tenSanPham) || giaMua <= 0 || soLuongTon < 0)
                 {
                     MessageBox.Show("Thông tin sản phẩm không hợp lệ!");
                     return;
                 }
 
                 // Tạo đối tượng SanPhamDTO
-                SanPhamDTO sanPham = new SanPhamDTO(idSanPham, tenSanPham, giaMua, soLuongTon, trangThai, idDanhMuc);
+                SanPhamDTO sanPham = new SanPhamDTO(id_sanpham, tenSanPham, giaMua, soLuongTon, trangThai, idDanhMuc);
 
                 SanPhamBUS sanPhambus = new SanPhamBUS();
                 // Gọi phương thức UpdateSanPham từ BUS

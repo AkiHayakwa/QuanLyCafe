@@ -5,133 +5,144 @@
 
     namespace BUS
     {
-        public class SanPhamBUS
+    public class SanPhamBUS
+    {
+        private SanPhamDAO sanPhamDAO;
+
+        public SanPhamBUS()
         {
-            private SanPhamDAO sanPhamDAO;
+            sanPhamDAO = new SanPhamDAO();
+        }
 
-            public SanPhamBUS()
+        // Lấy danh sách tất cả sản phẩm
+        public List<SanPhamDTO> GetAllSanPham()
+        {
+            try
             {
-                sanPhamDAO = new SanPhamDAO();
+                return sanPhamDAO.GetAllSanPham();
             }
-
-            // Lấy danh sách tất cả sản phẩm
-            public List<SanPhamDTO> GetAllSanPham()
+            catch (Exception ex)
             {
-                try
-                {
-                    return sanPhamDAO.GetAllSanPham();
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi lấy danh sách sản phẩm từ DAO: " + ex.Message);
-                }
+                throw new Exception("Lỗi khi lấy danh sách sản phẩm từ DAO: " + ex.Message);
             }
+        }
 
-            // Thêm sản phẩm
-            public bool AddSanPham(SanPhamDTO sanPham)
+        // Thêm sản phẩm
+        public bool AddSanPham(SanPhamDTO sanPham)
+        {
+            try
             {
-                try
+                if (string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
                 {
-                    if (string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
-                    {
-                        throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
-                    }
+                    throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
+                }
 
-                    return sanPhamDAO.AddSanPham(sanPham);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi thêm sản phẩm vào DAO: " + ex.Message);
-                }
+                return sanPhamDAO.AddSanPham(sanPham);
             }
-
-            // Cập nhật sản phẩm
-            public bool UpdateSanPham(SanPhamDTO sanPham)
+            catch (Exception ex)
             {
-                try
-                {
-                    if (sanPham.Id_SanPham <= 0 || string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
-                    {
-                        throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
-                    }
-
-                    return sanPhamDAO.UpdateSanPham(sanPham);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi cập nhật sản phẩm vào DAO: " + ex.Message);
-                }
+                throw new Exception("Lỗi khi thêm sản phẩm vào DAO: " + ex.Message);
             }
+        }
 
-            // Xóa sản phẩm
-            public bool DeleteSanPham(int idSanPham)
+        // Cập nhật sản phẩm
+        public bool UpdateSanPham(SanPhamDTO sanPham)
+        {
+            try
             {
-                try
+                if (sanPham.Id_SanPham <= 0 || string.IsNullOrEmpty(sanPham.TenSanPham) || sanPham.GiaMua <= 0 || sanPham.SoLuongTon < 0)
                 {
-                    if (idSanPham <= 0)
-                    {
-                        throw new ArgumentException("ID sản phẩm không hợp lệ.");
-                    }
+                    throw new ArgumentException("Thông tin sản phẩm không hợp lệ.");
+                }
 
-                    return sanPhamDAO.DeleteSanPham(idSanPham);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi xóa sản phẩm từ DAO: " + ex.Message);
-                }
+                return sanPhamDAO.UpdateSanPham(sanPham);
             }
-
-            // Lấy sản phẩm theo ID
-            public SanPhamDTO GetSanPhamById(int idSanPham)
+            catch (Exception ex)
             {
-                try
-                {
-                    if (idSanPham <= 0)
-                    {
-                        throw new ArgumentException("ID sản phẩm không hợp lệ.");
-                    }
-
-                    return sanPhamDAO.GetSanPhamById(idSanPham);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi lấy sản phẩm từ DAO: " + ex.Message);
-                }
+                throw new Exception("Lỗi khi cập nhật sản phẩm vào DAO: " + ex.Message);
             }
+        }
 
-            public List<SanPhamDTO> GetSanPhamByIdDanhMuc(int idDanhMuc)
+        // Xóa sản phẩm
+        public bool DeleteSanPham(int idSanPham)
+        {
+            try
             {
-                try
+                if (idSanPham <= 0)
                 {
-                    if (idDanhMuc <= 0)
-                    {
-                        throw new ArgumentException("ID danh mục không hợp lệ.");
-                    }
+                    throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                }
 
-                    return sanPhamDAO.GetSanPhamByIdDanhMuc(idDanhMuc);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi lấy sản phẩm theo ID danh mục từ DAO: " + ex.Message);
-                }
+                return sanPhamDAO.DeleteSanPham(idSanPham);
             }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa sản phẩm từ DAO: " + ex.Message);
+            }
+        }
+
+        // Lấy sản phẩm theo ID
+        public SanPhamDTO GetSanPhamById(int idSanPham)
+        {
+            try
+            {
+                if (idSanPham <= 0)
+                {
+                    throw new ArgumentException("ID sản phẩm không hợp lệ.");
+                }
+
+                return sanPhamDAO.GetSanPhamById(idSanPham);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy sản phẩm từ DAO: " + ex.Message);
+            }
+        }
+
+        public List<SanPhamDTO> GetSanPhamByIdDanhMuc(int idDanhMuc)
+        {
+            try
+            {
+                if (idDanhMuc <= 0)
+                {
+                    throw new ArgumentException("ID danh mục không hợp lệ.");
+                }
+
+                return sanPhamDAO.GetSanPhamByIdDanhMuc(idDanhMuc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy sản phẩm theo ID danh mục từ DAO: " + ex.Message);
+            }
+        }
 
         public bool GiamSoLuongTon(int idSanPham, int soLuongGiam)
-{
-    try
-    {
-        SanPhamDTO sanPham = sanPhamDAO.GetSanPhamById(idSanPham);
-        if (sanPham.SoLuongTon < soLuongGiam)
         {
-            throw new Exception("Số lượng tồn không đủ.");
+            try
+            {
+                SanPhamDTO sanPham = sanPhamDAO.GetSanPhamById(idSanPham);
+                if (sanPham.SoLuongTon < soLuongGiam)
+                {
+                    throw new Exception("Số lượng tồn không đủ.");
+                }
+                return sanPhamDAO.UpdateSoLuongTon(idSanPham, sanPham.SoLuongTon - soLuongGiam);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi giảm số lượng tồn: " + ex.Message);
+            }
         }
-        return sanPhamDAO.UpdateSoLuongTon(idSanPham, sanPham.SoLuongTon - soLuongGiam);
-    }
-    catch (Exception ex)
-    {
-        throw new Exception("Lỗi khi giảm số lượng tồn: " + ex.Message);
+
+        public string LayTenSanPham(int id_SanPham)
+        {
+            try
+            {
+                return sanPhamDAO.LayTenSanPham(id_SanPham);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy tên sản phẩm: " + ex.Message);
+            }
+        }
     }
 }
-
-        }
-    }

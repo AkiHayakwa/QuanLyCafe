@@ -38,52 +38,54 @@ namespace GUI
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            DialogResult check = MessageBox .Show("Bạn có muốn đăng xuất ?","Đồng ý",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (check == DialogResult.Yes)
-            {
-                Form1 loginForm = new Form1();  
-                loginForm.Show();
-
-                this.Hide();
-            }
-        }
 
         private void giaoDienAdminThemNguoiDung1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            giaoDienAdminThemNguoiDung1.Visible = true;
-            giaoDienAdminThemSP1.Visible = false;
-            giaoDienThongKe1.Visible = false;
-        }
 
         private void giaoDienThongKe1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
+        private void giaoDienAdminThemSP1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThongKe_Click_1(object sender, EventArgs e)
         {
             giaoDienAdminThemNguoiDung1.Visible = false;
             giaoDienAdminThemSP1.Visible = false;
             giaoDienThongKe1.Visible = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            giaoDienAdminThemNguoiDung1.Visible = true;
+            giaoDienAdminThemSP1.Visible = false;
+            giaoDienThongKe1.Visible = false;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
         {
             giaoDienAdminThemNguoiDung1.Visible = false;
             giaoDienAdminThemSP1.Visible = true;
             giaoDienThongKe1.Visible = false;
         }
 
-        private void giaoDienAdminThemSP1_Load(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
+            DialogResult check = MessageBox.Show("Bạn có muốn đăng xuất ?", "Đồng ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                Form1 loginForm = new Form1();
+                loginForm.Show();
 
+                this.Hide();
+            }
         }
     }
 }

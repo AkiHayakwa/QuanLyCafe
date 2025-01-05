@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class GiaoDienThuNganDatMon : UserControl
     {
+        private Dictionary<int, List<ChiTietHoaDonDTO>> ordersByTable = new Dictionary<int,List<ChiTietHoaDonDTO>>();
         public GiaoDienThuNganDatMon()
         {
             InitializeComponent();
@@ -39,18 +40,23 @@ namespace GUI
         {
             try
             {
-
-                string tenDanhMuc = CashierCategory.SelectedItem?.ToString();
+                string tenDanhMuc = CashierCategory.SelectedItem?.ToString().Trim();
                 if (!string.IsNullOrEmpty(tenDanhMuc))
                 {
                     // Lấy idDanhMuc từ tên danh mục
                     DanhMucBUS danhmucbus = new DanhMucBUS();
                     List<DanhMucDTO> danhMucList = danhmucbus.GetAllDanhMuc();
-                    int idDanhMuc = danhMucList.FirstOrDefault(d => d.TenDanhMuc == tenDanhMuc)?.Id_danhMuc ?? 0;
+
+                    // In ra danh sách danh mục để kiểm tra
+                    foreach (var dm in danhMucList)
+                    {
+                        Console.WriteLine($"ID: {dm.Id_danhMuc}, Tên: {dm.TenDanhMuc}");
+                    }
+
+                    int idDanhMuc = danhMucList.FirstOrDefault(d => d.TenDanhMuc.Trim() == tenDanhMuc)?.Id_danhMuc ?? 0;
 
                     if (idDanhMuc > 0)
                     {
-                        // Gọi hàm load sản phẩm theo danh mục
                         LoadSanPhamByDanhMuc(idDanhMuc);
                     }
                     else
@@ -68,6 +74,7 @@ namespace GUI
                 MessageBox.Show("Lỗi khi thay đổi danh mục: " + ex.Message, "Lỗi");
             }
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -99,7 +106,11 @@ namespace GUI
         {
             InitializeDgvOrder();
         }
-
+        private SanPhamBUS productBUS = new SanPhamBUS();
+        private void LoadProducts() {
+            List<SanPhamDTO> products = productBUS.GetAllSanPham();
+            dgv_Prd.DataSource = products;
+        }
         private void InitializeDgvOrder()
         {
             if (dgv_Order.Columns.Count == 0)
@@ -118,84 +129,102 @@ namespace GUI
 
         }
 
+        ChiTietHoaDonBus cthdbus = new ChiTietHoaDonBus();
         private void dgv_Prd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (selectedTableId == -1) { MessageBox.Show("Hãy chọn một bàn trước khi chọn sản phẩm.", "Lỗi"); return; }
             if (e.RowIndex >= 0)
             {
-                // Lấy thông tin sản phẩm
-                int idSanPham = Convert.ToInt32(dgv_Prd.Rows[e.RowIndex].Cells["id_SanPham"].Value);
-                string tenSanPham = dgv_Prd.Rows[e.RowIndex].Cells["TenSanPham"].Value.ToString();
-                decimal giaSanPham = Convert.ToDecimal(dgv_Prd.Rows[e.RowIndex].Cells["GiaMua"].Value);
-                int soLuongTonHienTai = Convert.ToInt32(dgv_Prd.Rows[e.RowIndex].Cells["SoLuongTon"].Value);
-
-                // Kiểm tra số lượng tồn
-                if (soLuongTonHienTai > 0)
-                {
-                    // Thêm sản phẩm vào giỏ hàng
-                    bool productExists = false;
-
-                    foreach (DataGridViewRow row in dgv_Order.Rows)
-                    {
-                        // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ hàng
-                        if (Convert.ToInt32(row.Cells["IdSanPham"].Value) == idSanPham)
-                        {
-                            // Cập nhật số lượng
-                            int currentQuantity = Convert.ToInt32(row.Cells["SoLuong"].Value);
-                            row.Cells["SoLuong"].Value = currentQuantity + 1;
-
-                            // Cập nhật tổng tiền
-                            decimal totalPrice = Convert.ToInt32(row.Cells["SoLuong"].Value) * giaSanPham;
-                            row.Cells["TongTien"].Value = totalPrice;
-
-                            productExists = true;
-                            break;
-                        }
-                    }
-
-                    if (!productExists)
-                    {
-                        // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
-                        dgv_Order.Rows.Add(idSanPham, tenSanPham, 1, giaSanPham, giaSanPham); // Mặc định số lượng = 1, tính tổng tiền = đơn giá
-
-                        // Cập nhật số lượng tồn
-                        dgv_Prd.Rows[e.RowIndex].Cells["SoLuongTon"].Value = soLuongTonHienTai - 1;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Sản phẩm này không còn đủ số lượng.", "Lỗi");
-                }
-            }
-        }
-
-        private void LoadDanhMuc()
-        {
-          
                 try
                 {
-                    DanhMucBUS danhmucbus = new DanhMucBUS();
-                    List<DanhMucDTO> danhMucList = danhmucbus.GetAllDanhMuc();
-
-                    CashierCategory.Items.Clear();
-                    foreach (var danhMuc in danhMucList)
+                    DataGridViewRow selectedRow = dgv_Prd.Rows[e.RowIndex]; 
+                    var product = (SanPhamDTO)selectedRow.DataBoundItem; 
+                    if (product.SoLuongTon > 0)
                     {
-                        CashierCategory.Items.Add(danhMuc.TenDanhMuc);
+                        bool productExists = false;
+                        foreach (DataGridViewRow row in dgv_Order.Rows)
+                        {
+                            if (Convert.ToInt32(row.Cells["IdSanPham"].Value) == product.Id_SanPham)
+                            {
+                                int currentQuantity = Convert.ToInt32(row.Cells["SoLuong"].Value);
+                                row.Cells["SoLuong"].Value = currentQuantity + 1;
+                                row.Cells["TongTien"].Value = (currentQuantity + 1) * product.GiaMua;
+
+                                var chiTietHoaDon = new ChiTietHoaDonDTO
+                                {
+                                    IdHoaDon = Convert.ToInt32(CashierInvoiceId.Text),
+                                    IdSanPham = product.Id_SanPham,
+                                    SoLuong = currentQuantity + 1,
+                                    GiaBan = product.GiaMua,
+                                    TongTien = (currentQuantity + 1) * product.GiaMua
+                                };
+
+                                cthdbus.UpdateInvoiceDetail(chiTietHoaDon.IdHoaDon , chiTietHoaDon.IdSanPham, chiTietHoaDon.SoLuong, chiTietHoaDon.GiaBan);
+                                productExists = true;
+                                break;
+                            }
+                        }
+                        if (!productExists)
+                        {
+                            dgv_Order.Rows.Add(product.Id_SanPham, product.TenSanPham, 1, product.GiaMua, product.GiaMua);
+                            var chiTietHoaDon = new ChiTietHoaDonDTO
+                            {
+                                IdHoaDon = Convert.ToInt32(CashierInvoiceId.Text),
+                                IdSanPham = product.Id_SanPham,
+                                SoLuong = 1,
+                                GiaBan = product.GiaMua,
+                                TongTien = product.GiaMua
+                            };
+                            cthdbus.AddInvoiceDetail(chiTietHoaDon);
+                        }
+                        productBUS.GiamSoLuongTon(product.Id_SanPham, 1);
+                        selectedRow.Cells["SoLuongTon"].Value = product.SoLuongTon - 1;
+                        CalculateAndDisplayTotalPrice();
+                        if (selectedTableButton != null)
+                        {
+                            selectedTableButton.BackColor = Color.Green;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sản phẩm này không còn đủ số lượng.", "Lỗi");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi tải danh mục: " + ex.Message, "Lỗi");
+                    MessageBox.Show("Lỗi khi thêm sản phẩm vào giỏ hàng: " + ex.Message, "Lỗi");
                 }
-          
+            }
+        }
+     private void LoadDanhMuc()
+        {
+
+            try
+            {
+                DanhMucBUS danhmucbus = new DanhMucBUS();
+                List<DanhMucDTO> danhMucList = danhmucbus.GetAllDanhMuc();
+
+                CashierCategory.Items.Clear();
+                foreach (var danhMuc in danhMucList)
+                {
+                    CashierCategory.Items.Add(danhMuc.TenDanhMuc);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh mục: " + ex.Message, "Lỗi");
+            }
+
         }
 
 
         // Hàm tùy chỉnh hiển thị cột DataGridView
+        SanPhamBUS sanphambus = new SanPhamBUS();
         private void LoadSanPhamByDanhMuc(int idDanhMuc)
         {
             try
             {
-                SanPhamBUS sanphambus = new SanPhamBUS();
+                
                 List<SanPhamDTO> sanPhamList = sanphambus.GetSanPhamByIdDanhMuc(idDanhMuc);
 
                 if (sanPhamList == null || sanPhamList.Count == 0)
@@ -224,6 +253,9 @@ namespace GUI
                     {
                         dgv_Prd.Columns["SoLuongTon"].Visible = true;
                     }
+                    dgv_Prd.Columns["SoLuongTon"].HeaderText = "Số Lượng còn lại";
+                    dgv_Prd.Columns["TrangThai"].HeaderText = "Trạng Thái";
+
                 }
             }
             catch (Exception ex)
@@ -232,35 +264,208 @@ namespace GUI
             }
         }
 
-        private void Button_Click(object sender, EventArgs e)
-        {
-            // Lấy button đã click
-            Button clickedButton = sender as Button;
+        BanCafeBus bancafebus = new BanCafeBus();
+        private Button selectedTableButton = null;
+        private int selectedTableId = -1;
 
-            // Kiểm tra và thay đổi màu sắc
-            if (clickedButton.BackColor == Color.Red)
+
+        private void CalculateAndDisplayTotalPrice()
+        {
+            float totalPrice = 0;
+            foreach (DataGridViewRow row in dgv_Order.Rows)
             {
-                clickedButton.BackColor = SystemColors.Control; // Màu mặc định
+                if (row.Cells["TongTien"] != null && row.Cells["TongTien"].Value != null)
+                {
+                    totalPrice += Convert.ToSingle(row.Cells["TongTien"].Value);
+                }
             }
-            else
+            CashierInvoice.Text = totalPrice.ToString("N2"); 
+
+            if (int.TryParse(CashierInvoiceId.Text, out int invoiceId))
             {
-                clickedButton.BackColor = Color.Red;
+                UpdateInvoiceTotalPrice(invoiceId, totalPrice);
             }
         }
 
+        private void UpdateInvoiceTotalPrice(int invoiceId, float totalPrice)
+        {
+            hoaDonBus.UpdateTotalAmount(invoiceId, totalPrice);
+        }
+
+        private bool isHandlingClick = false;
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            if (isHandlingClick) return;
+            isHandlingClick = true;
+
+            Button clickedButton = sender as Button;
+
+            if (clickedButton != null)
+            {
+                int tableId;
+                if (clickedButton.Tag != null && int.TryParse(clickedButton.Tag.ToString(), out tableId))
+                {
+                    // Lưu trữ dữ liệu order hiện tại của bàn trước đó (nếu có)
+                    if (selectedTableId != -1 && selectedTableId != tableId)
+                    {
+                        SaveCurrentOrder(selectedTableId);
+                    }
+
+                    // Kiểm tra và thay đổi màu sắc
+                    if (selectedTableButton != null && selectedTableId != tableId)
+                    {
+                        selectedTableButton.BackColor = ordersByTable.ContainsKey(selectedTableId) && ordersByTable[selectedTableId].Count > 0 ? Color.Green : SystemColors.Control;
+                    }
+
+                    if (selectedTableId != tableId)
+                    {
+                        clickedButton.BackColor = Color.Red;
+                        selectedTableButton = clickedButton;
+                        selectedTableId = tableId;
+
+                        CashierTableNumber.Text = clickedButton.Text;
+
+                        // Xóa sạch dữ liệu trong dgv_Order và tải dữ liệu order của bàn mới (nếu có)
+                        dgv_Order.Rows.Clear();
+                        LoadOrderForTable(selectedTableId);
+
+                        
+                       var hoaDon = hoaDonBus.LayHoaDonTheoBan(selectedTableId);
+                        if (hoaDon != null)
+                        {
+                            CashierInvoiceId.Text = hoaDon.IdHoaDon.ToString();
+                        }
+                        else
+                        {
+                            // Tạo mới hóa đơn nếu chưa có
+                            hoaDon = new HoaDonDTO
+                            {
+                                IdBan = selectedTableId,
+                                Ngay = DateTime.Now,
+                                TongTien = 0,
+                                GiamGia = 0
+                            };
+                            int newHoaDonId = hoaDonBus.CreateInvoice(hoaDon);
+                            CashierInvoiceId.Text = newHoaDonId.ToString();
+                        }
+
+                        CalculateAndDisplayTotalPrice();
+                        MessageBox.Show("Bạn đã chọn Bàn " + selectedTableId, "Thông báo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: Giá trị của Tag không hợp lệ hoặc null.", "Lỗi");
+                }
+            }
+
+            isHandlingClick = false;
+        }
+
+
         private void Cashierbtnpayment_Click(object sender, EventArgs e)
         {
-            
+      
         }
 
         private void dgv_Order_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    DataGridViewRow selectedRow = dgv_Order.Rows[e.RowIndex];
+                    int idSanPham = Convert.ToInt32(selectedRow.Cells["IdSanPham"].Value);
+                    int currentQuantity = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
+                    decimal price = Convert.ToDecimal(selectedRow.Cells["DonGia"].Value);
+                    if (currentQuantity > 1)
+                    {
+                        selectedRow.Cells["SoLuong"].Value = currentQuantity - 1;
+                        selectedRow.Cells["TongTien"].Value = (currentQuantity - 1) * price;
+                    }
+                    else
+                    {
+                        dgv_Order.Rows.RemoveAt(e.RowIndex);
+                    }
+                    sanphambus.GiamSoLuongTon(idSanPham, -1);
+                    foreach (DataGridViewRow row in dgv_Prd.Rows)
+                    {
+                        if (Convert.ToInt32(row.Cells["id_SanPham"].Value) == idSanPham)
+                        {
+                           int soLuongTon = Convert.ToInt32(row.Cells["SoLuongTon"].Value);
+                           if(soLuongTon > 0)
+                           {
+                                row.Cells["SoLuongTon"].Value = soLuongTon + 1;
+                           }
+                           if(soLuongTon - 1 == 0)
+                            {
+                                sanphambus.DeleteSanPham(idSanPham);
+                                dgv_Prd.Rows.RemoveAt(row.Index);
+                            }
+                            break;
+                        }
+                    }
+                    CalculateAndDisplayTotalPrice();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật giỏ hàng: " + ex.Message, "Lỗi");
+                }
+            }
         }
-
-        private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SaveCurrentOrder(int tableId)
+        {
+            var currentOrders = new List<ChiTietHoaDonDTO>();
+            foreach (DataGridViewRow row in dgv_Order.Rows) {
+                if (row.Cells["IdSanPham"].Value != null)
+                {
+                    currentOrders.Add(new ChiTietHoaDonDTO
+                    {
+                        IdHoaDon = selectedHoaDonId,
+                        IdSanPham = Convert.ToInt32(row.Cells["IdSanPham"].Value),
+                        SoLuong = Convert.ToInt32(row.Cells["SoLuong"].Value),
+                        GiaBan = Convert.ToSingle(row.Cells["DonGia"].Value)
+                    });
+                }
+            }
+            if (ordersByTable.ContainsKey(tableId))
+            {
+                ordersByTable[tableId] = currentOrders;
+            }
+            else
+            {
+                ordersByTable.Add(tableId, currentOrders);
+            }
+        }
+        HoaDonBus hoaDonBus = new HoaDonBus();
+        private void LoadOrderForTable(int tableId)
+        {
+            if (ordersByTable.ContainsKey(tableId))
+            {
+                var currentOrders = ordersByTable[tableId];
+                foreach(var chitiet in currentOrders)
+                {
+                    string tenSanPham = sanphambus.LayTenSanPham(chitiet.IdSanPham);
+                    dgv_Order.Rows.Add(chitiet.IdSanPham, tenSanPham, chitiet.SoLuong, chitiet.GiaBan, chitiet.SoLuong * chitiet.GiaBan);
+                }
+            }
+        }
+        private int selectedHoaDonId = -1;
+            private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void chuyểnĐổiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GiaoDienChuyenDoiBan formChuyenDoiBan = new GiaoDienChuyenDoiBan();
+            formChuyenDoiBan.Show();
         }
     } 
  }

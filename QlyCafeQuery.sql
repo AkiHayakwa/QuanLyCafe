@@ -35,15 +35,13 @@ CREATE TABLE BanCafe (
 
 -- Tạo bảng HoaDon
 CREATE TABLE HoaDon (
-    id_HoaDon INT PRIMARY KEY,
+    id_HoaDon INT IDENTITY(1,1) PRIMARY KEY,
     id_Ban INT not null,
-	id_KhachHang INT not null , 
 	Ngay Date ,
-    TongTien DECIMAL(10, 2),
+    TongTien float,
     GiamGia DECIMAL(10, 2) not null default 0,
 
     FOREIGN KEY (id_Ban) REFERENCES BanCafe(id_Ban),
-	FOREIGN KEY (id_KhachHang) REFERENCES KhachHang(id_KhachHang)
 );
 
 -- Tạo bảng ChiTietHoaDon
@@ -80,6 +78,7 @@ CREATE TABLE KhachHang(
 select * from NhanVien;
 select * from TaiKhoan;
 drop table TaiKhoan
+select * from HoaDon;
 
 select * from SanPham;
 insert into TaiKhoan values ('Nguyen Van Tru','123456789',N'Hoạt động','Admin'),('Nguyen Van Thu','123456789',N'Hoạt động','Thu Ngân');
@@ -93,7 +92,7 @@ select * from DanhMuc;
 go
 CREATE TRIGGER trg_UpdateSanPham
 ON SanPham
-AFTER UPDATE
+AFTER UPDATE	
 AS
 BEGIN
     -- Kiểm tra nếu số lượng tồn được cập nhật và bằng 0
@@ -108,4 +107,9 @@ BEGIN
     END
 END
 
-delete from sanpham 
+delete from sanpham
+select * from ChiTietHoaDon;
+select * from HoaDon;
+select * from BanCafe;
+delete from HoaDon;
+INSERT INTO BanCafe (id_Ban, TenBan, TrangThai) VALUES (1, N'Bàn 1', N'Trống'), (2, N'Bàn 2', N'Trống'), (3, N'Bàn 3', N'Trống'), (4, N'Bàn 4', N'Trống'), (5, N'Bàn 5', N'Trống'), (6, N'Bàn 6', N'Trống'), (7, N'Bàn 7', N'Trống'), (8, N'Bàn 8', N'Trống'), (9, N'Bàn 9', N'Trống'), (10, N'Bàn 10', N'Trống'), (11, N'Bàn 11', N'Trống'), (12, N'Bàn 12', N'Trống'), (13, N'Bàn 13', N'Trống'), (14, N'Bàn 14', N'Trống'), (15, N'Bàn 15', N'Trống'), (16, N'Bàn 16', N'Trống');

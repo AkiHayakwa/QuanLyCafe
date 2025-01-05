@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DAO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 namespace BUS
 {
-    internal class BanCafeBus
+    public class BanCafeBus
     {
         private BanCafeDAO banCafeDAO;
 
@@ -18,7 +19,7 @@ namespace BUS
         }
         public List<BanCafeDTO> GetAllTables()
         {
-            return banCafeDAO.GetAllTables();
+            return banCafeDAO.GetAllBanCafe();
         }
 
             public void UpdateTableStatus(int id_Ban, string status)
@@ -41,7 +42,10 @@ namespace BUS
                 catch (Exception ex)
                 {
                     throw new Exception("Lỗi khi xóa bàn: " + ex.Message);
-                }
             }
+        }
+        public List<BanCafeDTO> LayBanChuaCoHoaDon() { 
+            return banCafeDAO.LayBanChuaCoHoaDon(); 
+        }
     }
 }

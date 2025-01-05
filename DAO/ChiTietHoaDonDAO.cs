@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-
 using DTO;
 
 namespace DAO
 {
     public class ChiTietHoaDonDAO
     {
-        DatabaseConnection conn;
+        private DatabaseConnection conn;
 
         public ChiTietHoaDonDAO()
         {
@@ -20,69 +16,117 @@ namespace DAO
 
         public void AddInvoiceDetail(ChiTietHoaDonDTO chiTiet)
         {
-            string query = "INSERT INTO ChiTietHoaDon (id_HoaDon, id_SanPham, SoLuong, GiaBan) VALUES (@id_HoaDon, @id_SanPham, @SoLuong, @GiaBan)";
-
-            conn.OpenConnection();
-            SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
-            cmd.Parameters.AddWithValue("@id_HoaDon", chiTiet.IdHoaDon);
-            cmd.Parameters.AddWithValue("@id_SanPham", chiTiet.IdSanPham);
-            cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
-            cmd.Parameters.AddWithValue("@GiaBan", chiTiet.GiaBan);
-            cmd.ExecuteNonQuery();
-
+            string query = "INSERT INTO ChiTietHoaDon (id_HoaDon, id_SanPham, SoLuong, GiaBan, TongTien) VALUES (@IdHoaDon, @IdSanPham, @SoLuong, @DonGia, @TongTien)";
+            try
+            {
+                conn.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
+                cmd.Parameters.AddWithValue("@IdHoaDon", chiTiet.IdHoaDon);
+                cmd.Parameters.AddWithValue("@IdSanPham", chiTiet.IdSanPham);
+                cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
+                cmd.Parameters.AddWithValue("@DonGia", chiTiet.GiaBan);
+                cmd.Parameters.AddWithValue("@TongTien", chiTiet.TongTien);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm chi tiết hóa đơn: " + ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
         }
 
         public List<ChiTietHoaDonDTO> GetInvoiceDetails(int id_HoaDon)
         {
-            var list = new List<ChiTietHoaDonDTO>();
+            List<ChiTietHoaDonDTO> chiTietList = new List<ChiTietHoaDonDTO>();
             string query = "SELECT * FROM ChiTietHoaDon WHERE id_HoaDon = @id_HoaDon";
-
-
-            conn.OpenConnection();
-            SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
-            cmd.Parameters.AddWithValue("@id_HoaDon", id_HoaDon);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                list.Add(new ChiTietHoaDonDTO
+                conn.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
+                cmd.Parameters.AddWithValue("@id_HoaDon", id_HoaDon);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    Id = reader.GetInt32(0),
-                    IdHoaDon = reader.GetInt32(1),
-                    IdSanPham = reader.GetInt32(2),
-                    SoLuong = reader.GetInt32(3),
-                    GiaBan = reader.GetFloat(4)
-                });
+                    try
+                    {
+                        // In giá trị thực tế để kiểm tra
+                        Console.WriteLine("GiaBan: " + reader["GiaBan"]);
+                        Console.WriteLine("TongTien: " + reader["TongTien"]);
+
+                        ChiTietHoaDonDTO chiTiet = new ChiTietHoaDonDTO
+                        {
+                            IdHoaDon = reader.GetInt32(reader.GetOrdinal("id_HoaDon")),
+                            IdSanPham = reader.GetInt32(reader.GetOrdinal("id_SanPham")),
+                            SoLuong = reader.GetInt32(reader.GetOrdinal("SoLuong")),
+                            GiaBan = Convert.ToSingle(reader["GiaBan"]), // Sử dụng Convert.ToSingle
+                            TongTien = Convert.ToSingle(reader["TongTien"]) // Sử dụng Convert.ToSingle
+                        };
+                        chiTietList.Add(chiTiet);
+                    }
+                    catch (InvalidCastException ex)
+                    {
+                        throw new Exception("Lỗi chuyển đổi dữ liệu: " + ex.Message);
+                    }
+                }
+                reader.Close();
             }
-            return list;
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy thông tin chi tiết hóa đơn: " + ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+            return chiTietList;
         }
 
-         
 
-        public void UpdateInvoiceDetail(int id, int soLuong, float giaBan)
-        {
-            string query = "UPDATE ChiTietHoaDon SET SoLuong = @SoLuong, GiaBan = @GiaBan WHERE id = @id";
-
-           
+        public void UpdateInvoiceDetail(int idHoaDon, int idSanPham, int soLuong, float giaBan)
+          {
+            string query = "UPDATE ChiTietHoaDon SET SoLuong = @SoLuong, GiaBan = @GiaBan, TongTien = @TongTien WHERE id_HoaDon = @idHoaDon AND id_SanPham = @idSanPham";
+            try
+            {
                 conn.OpenConnection();
                 SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
                 cmd.Parameters.AddWithValue("@SoLuong", soLuong);
                 cmd.Parameters.AddWithValue("@GiaBan", giaBan);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@TongTien", soLuong * giaBan);
+                cmd.Parameters.AddWithValue("@idHoaDon", idHoaDon);
+                cmd.Parameters.AddWithValue("@idSanPham", idSanPham);
                 cmd.ExecuteNonQuery();
-            
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật chi tiết hóa đơn: " + ex.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
         }
 
-        public void DeleteInvoiceDetail(int id)
-        {
-            string query = "DELETE FROM ChiTietHoaDon WHERE id = @id";
-
-          
-                conn.OpenConnection();
-                SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.ExecuteNonQuery();
-            
+            public void DeleteInvoiceDetail(int id)
+            {
+                string query = "DELETE FROM ChiTietHoaDon WHERE IdChiTietHoaDon = @IdChiTietHoaDon";
+                try
+                {
+                    conn.OpenConnection();
+                    SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
+                    cmd.Parameters.AddWithValue("@IdChiTietHoaDon", id);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Lỗi khi xóa chi tiết hóa đơn: " + ex.Message);
+                }
+                finally
+                {
+                    conn.CloseConnection();
+                }
+            }
         }
     }
-}

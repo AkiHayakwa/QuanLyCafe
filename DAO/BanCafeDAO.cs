@@ -18,35 +18,59 @@ namespace DAO
         {
             conn = new DatabaseConnection();
         }
-        public List<BanCafeDTO> GetAllTables()
+        public List<BanCafeDTO> GetAllBanCafe()
         {
-            var list = new List<BanCafeDTO>();
+            List<BanCafeDTO> banCafeList = new List<BanCafeDTO>();
+
             conn.OpenConnection();
             string query = "SELECT * FROM BanCafe";
-            SqlCommand command = new SqlCommand(query, conn.GetConnection());
-            SqlDataReader reader = command.ExecuteReader();
-
+            SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
+            SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                list.Add(new BanCafeDTO
+                BanCafeDTO banCafe = new BanCafeDTO
                 {
-                    IdBan = reader.GetInt32(0),
-                    TenBan = reader.GetString(1),
-                    TrangThai = reader.GetString(2)
-                });
+                    Id_Ban = Convert.ToInt32(reader["id_Ban"]),
+                    TenBan = reader["TenBan"].ToString(),
+                    TrangThai = reader["TrangThai"].ToString()
+                };
+                banCafeList.Add(banCafe);
             }
 
-            return list;
+            return banCafeList;
         }
-
         public void UpdateTableStatus(int id_Ban, string status)
         {
-            string query = "UPDATE BanCafe SET TrangThai = @TrangThai WHERE id_Ban = @id_Ban";
-                conn.OpenConnection();
+
+            conn.OpenConnection();
+            string query = "UPDATE BanCafe SET TrangThai = @TrangThai WHERE id_Ban = @Id_Ban";
+            SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
+            cmd.Parameters.AddWithValue("@TrangThai", status);
+            cmd.Parameters.AddWithValue("@Id_Ban", id_Ban);
+            cmd.ExecuteNonQuery();
+        }
+
+        public List<BanCafeDTO> LayBanChuaCoHoaDon() { 
+            List<BanCafeDTO> banCafeList = new List<BanCafeDTO>(); 
+            try { 
+                conn.OpenConnection(); 
+                string query = @" SELECT * FROM BanCafe bc WHERE bc.id_Ban NOT IN (SELECT DISTINCT hd.id_Ban FROM HoaDon hd)"; 
                 SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
-                cmd.Parameters.AddWithValue("@TrangThai", status);
-                cmd.Parameters.AddWithValue("@id_Ban", id_Ban);
-                cmd.ExecuteNonQuery();
-            }
+                SqlDataReader reader = cmd.ExecuteReader(); 
+                while (reader.Read()) {
+                    BanCafeDTO banCafe = new BanCafeDTO {
+                        Id_Ban = Convert.ToInt32(reader["id_Ban"]), 
+                        TenBan = reader["TenBan"].ToString(),
+                        TrangThai = reader["TrangThai"].ToString() 
+                    }; 
+                    banCafeList.Add(banCafe); 
+                }
+                reader.Close(); 
+            } catch (Exception ex) {
+                throw new Exception("Lỗi khi lấy danh sách bàn chưa có hóa đơn: " + ex.Message); 
+            } finally { 
+                conn.CloseConnection(); 
+            } return banCafeList; 
         }
     }
+}

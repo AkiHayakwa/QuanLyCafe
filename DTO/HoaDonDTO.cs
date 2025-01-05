@@ -9,19 +9,17 @@ namespace DTO
     public class HoaDonDTO
     {
         public int IdHoaDon { get; set; }
-        public int IdBan { get; set; }
-        public int IdKhachHang { get; set; }
+        public int IdBan { get; set; } 
         public DateTime Ngay { get; set; }
-        public decimal TongTien { get; set; }
+        public float TongTien { get; set; }
         public decimal GiamGia { get; set; }
 
         public HoaDonDTO() { }
 
-        public HoaDonDTO(int idHoaDon, int idBan, int idKhachHang, DateTime ngay, decimal tongTien, decimal giamGia)
+        public HoaDonDTO(int idHoaDon, int idBan, DateTime ngay, float tongTien, decimal giamGia)
         {
             IdHoaDon = idHoaDon;
             IdBan = idBan;
-            IdKhachHang = idKhachHang;
             Ngay = ngay;
             TongTien = tongTien;
             GiamGia = giamGia;

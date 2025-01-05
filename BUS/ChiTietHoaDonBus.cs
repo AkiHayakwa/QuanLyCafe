@@ -7,7 +7,7 @@ using DTO;
 using DAO;
 namespace BUS
 {
-    internal class ChiTietHoaDonBus
+    public class ChiTietHoaDonBus
     {
         private ChiTietHoaDonDAO chiTietHoaDonDAO;
 
@@ -43,11 +43,11 @@ namespace BUS
         }
 
         // Method to update an invoice detail
-        public void UpdateInvoiceDetail(int id, int soLuong, float giaBan)
+        public void UpdateInvoiceDetail(int idHoaDon , int idSanPham, int soLuong, float giaBan)
         {
             try
             {
-                chiTietHoaDonDAO.UpdateInvoiceDetail(id, soLuong, giaBan);
+                chiTietHoaDonDAO.UpdateInvoiceDetail(idHoaDon , idSanPham, soLuong, giaBan);
             }
             catch (Exception ex)
             {
