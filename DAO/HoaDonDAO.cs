@@ -91,6 +91,11 @@ public class HoaDonDAO
                     TongTien = (float)reader.GetDouble(reader.GetOrdinal("TongTien")),
                     GiamGia = reader.GetDecimal(reader.GetOrdinal("GiamGia"))
                 };
+
+                if(hoaDon.TongTien == 0)
+                {
+                    hoaDon = null;
+                }
             }
         }
         catch (Exception ex)
@@ -168,4 +173,40 @@ public class HoaDonDAO
             conn.CloseConnection();
         } 
     }
+
+    public HoaDonDTO LayHoaDonTongTienBang0()
+    {
+        string query = "SELECT TOP 1 * FROM HoaDon WHERE TongTien = 0 ORDER BY Ngay DESC";
+        HoaDonDTO hoaDon = null;
+
+        try
+        {
+            conn.OpenConnection();
+            SqlCommand cmd = new SqlCommand(query, conn.GetConnection());
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                hoaDon = new HoaDonDTO
+                {
+                    IdHoaDon = reader.GetInt32(reader.GetOrdinal("id_HoaDon")),
+                    IdBan = reader.GetInt32(reader.GetOrdinal("id_Ban")),
+                    Ngay = reader.GetDateTime(reader.GetOrdinal("Ngay")),
+                    TongTien = (float)reader.GetDouble(reader.GetOrdinal("TongTien")),
+                    GiamGia = reader.GetDecimal(reader.GetOrdinal("GiamGia"))
+                };
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Lỗi khi lấy hóa đơn có tổng tiền = 0: " + ex.Message);
+        }
+        finally
+        {
+            conn.CloseConnection();
+        }
+
+        return hoaDon;
+    }
+
 }

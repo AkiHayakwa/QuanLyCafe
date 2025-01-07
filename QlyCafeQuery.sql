@@ -104,9 +104,15 @@ BEGIN
         FROM SanPham sp
         INNER JOIN inserted i ON sp.id_SanPham = i.id_SanPham
         WHERE i.SoLuongTon = 0;
+		return 
     END
+
+	UPDATE SanPham 
+	Set TrangThai = 'Còn'
+	From SanPham 
 END
 
+drop trigger trg_UpdateSanPham
 delete from sanpham
 select * from ChiTietHoaDon;
 select * from HoaDon;

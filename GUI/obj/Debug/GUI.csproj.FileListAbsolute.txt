@@ -316,3 +316,5 @@ D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThongKe.resources
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienChuyenDoiBan.resources
 D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\Guna.UI2.dll
 D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienThanhToan.resources
+D:\FileWinform\QuanLyCafeProject\GUI\bin\Debug\DevExpress.RichEdit.v24.1.Export.dll
+D:\FileWinform\QuanLyCafeProject\GUI\obj\Debug\GUI.GiaoDienXuatHoaDon1.resources

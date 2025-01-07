@@ -294,6 +294,9 @@ namespace GUI
 
         private bool isHandlingClick = false;
 
+        private int currentInvoiceId = -1; // Biến lưu trữ ID hóa đơn hiện tại
+        private float currentInvoiceTotal = 0; // Biến lưu trữ tổng tiền hiện tại của hóa đơn
+
         private void Button_Click(object sender, EventArgs e)
         {
             if (isHandlingClick) return;
@@ -330,24 +333,36 @@ namespace GUI
                         dgv_Order.Rows.Clear();
                         LoadOrderForTable(selectedTableId);
 
-                        
-                       var hoaDon = hoaDonBus.LayHoaDonTheoBan(selectedTableId);
-                        if (hoaDon != null)
+                        // Kiểm tra xem có hóa đơn nào với tổng tiền = 0 không
+                        if (currentInvoiceId != -1 && currentInvoiceTotal == 0)
                         {
-                            CashierInvoiceId.Text = hoaDon.IdHoaDon.ToString();
+                            CashierInvoiceId.Text = currentInvoiceId.ToString();
                         }
                         else
                         {
-                            // Tạo mới hóa đơn nếu chưa có
-                            hoaDon = new HoaDonDTO
+                            // Kiểm tra hóa đơn hiện có của bàn
+                            var hoaDon = hoaDonBus.LayHoaDonTheoBan(selectedTableId);
+                            if (hoaDon != null && hoaDon.TongTien > 0)
                             {
-                                IdBan = selectedTableId,
-                                Ngay = DateTime.Now,
-                                TongTien = 0,
-                                GiamGia = 0
-                            };
-                            int newHoaDonId = hoaDonBus.CreateInvoice(hoaDon);
-                            CashierInvoiceId.Text = newHoaDonId.ToString();
+                                // Nếu hóa đơn có tổng tiền > 0, sử dụng hóa đơn hiện tại
+                                currentInvoiceId = hoaDon.IdHoaDon;
+                                currentInvoiceTotal = hoaDon.TongTien;
+                            }
+                            else if (hoaDon == null || hoaDon.TongTien == 0)
+                            {
+                                // Tạo mới hóa đơn nếu không có hóa đơn nào hoặc tổng tiền = 0
+                                hoaDon = new HoaDonDTO
+                                {
+                                    IdBan = selectedTableId,
+                                    Ngay = DateTime.Now,
+                                    TongTien = 0,
+                                    GiamGia = 0
+                                };
+                                currentInvoiceId = hoaDonBus.CreateInvoice(hoaDon);
+                                currentInvoiceTotal = 0; // Tổng tiền hóa đơn mới là 0
+                            }
+
+                            CashierInvoiceId.Text = currentInvoiceId.ToString();
                         }
 
                         CalculateAndDisplayTotalPrice();
@@ -362,7 +377,6 @@ namespace GUI
 
             isHandlingClick = false;
         }
-
 
         private void Cashierbtnpayment_Click(object sender, EventArgs e)
         {

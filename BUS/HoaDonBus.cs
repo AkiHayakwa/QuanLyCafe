@@ -93,5 +93,17 @@ namespace BUS
                 throw new Exception("Lỗi khi cập nhật bàn cho hóa đơn: " + ex.Message);
             }
         }
+
+        public HoaDonDTO LayHoaDonCoTongTien0()
+        {
+            try
+            {
+               return hoaDonDAO.LayHoaDonTongTienBang0();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật bàn cho hóa đơn: " + ex.Message);
+            }
+        }
     }
 }
